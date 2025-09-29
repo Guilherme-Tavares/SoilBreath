@@ -1,0 +1,12 @@
+CREATE DATABASE soil_database;
+
+USE soil_database;
+
+CREATE TABLE soil
+(
+	soil_id INT PRIMARY KEY AUTO_INCREMENT,
+    nitrogen DECIMAL NOT NULL DEFAULT 0,
+    phosphorus DECIMAL NOT NULL DEFAULT 0,
+    potassium DECIMAL NOT NULL DEFAULT 0,
+    moisture DECIMAL NOT NULL DEFAULT 0
+);
