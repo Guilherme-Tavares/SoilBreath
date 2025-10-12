@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "WIwryGfWxCugoycHwPGQERFEDLkz8gdmHJ0HfTaC4rQ=",
+  "Source": "api_soil_breath",
+  "BasePath": "_content/api_soil_breath",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
