@@ -1,18 +1,31 @@
+using api_soil_breath.Data;
 using api_soil_breath.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Registrar DbContext
+builder.Services.AddDbContext<DataBaseConfig>(options =>
+    options.UseMySql(
+        "server=localhost;database=db_soilbreath;user=root;password=root;",
+        new MySqlServerVersion(new Version(8, 0, 33))
+    )
+);
 
+// Registrar HttpClient (necessário para IHttpClientFactory)
+builder.Services.AddHttpClient();
+
+// Registrar HostedService
+builder.Services.AddHostedService<ChamadaEsp32Service>();
+builder.Services.AddScoped<SoloService>();
+
+// Add controllers e Swagger
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddHostedService<ChamadaEsp32Service>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -20,9 +33,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
