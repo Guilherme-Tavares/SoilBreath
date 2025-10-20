@@ -16,5 +16,17 @@ namespace api_soil_breath.Services
         {
             return _context.Solos.ToList();
         }
+
+        public void UpdateSolo(Solo solo)
+        {
+            var existingSolo = _context.Solos.Find(solo.Id);
+            if (existingSolo != null)
+            {
+                existingSolo.Fosforo = solo.Fosforo;
+                existingSolo.Potassio = solo.Potassio;
+                existingSolo.Nitrogenio = solo.Nitrogenio;
+                _context.SaveChanges();
+            }
+        }
     }
 }

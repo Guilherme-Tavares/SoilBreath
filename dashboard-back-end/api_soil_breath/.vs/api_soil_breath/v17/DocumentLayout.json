@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Services\\SoloService.cs",
               "ToolTip": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\SoloService.cs",
               "RelativeToolTip": "Services\\SoloService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T18:18:21.417Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Data\\DataBaseConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T15:58:15.568Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T15:58:15.568Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Services\\ChamadaEsp32Service.cs",
               "ViewState": "AQIAACoAAAAAAAAAAAAAwE8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T02:55:06.151Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-12T02:55:06.151Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAYwCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T02:47:54.469Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-12T02:47:54.469Z"
             }
           ]
         }
