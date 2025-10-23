@@ -1,12 +1,42 @@
-CREATE DATABASE soil_database;
+CREATE DATABASE db_soil;
 
-USE soil_database;
+USE db_soil;
 
-CREATE TABLE soil
-(
-	soil_id INT PRIMARY KEY AUTO_INCREMENT,
-    nitrogen DECIMAL NOT NULL DEFAULT 0,
-    phosphorus DECIMAL NOT NULL DEFAULT 0,
-    potassium DECIMAL NOT NULL DEFAULT 0,
-    moisture DECIMAL NOT NULL DEFAULT 0
+CREATE TABLE Usuario(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255),
+    email VARCHAR(255),
+    senha_hash VARCHAR(255)
+);
+
+CREATE TABLE Propriedade(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255),
+    usuario_id INT NOT NULL,
+    FOREIGN KEY(usuario_id) REFERENCES Usuario(id)
+);
+
+CREATE TABLE Cultura(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255),
+    fosforo DOUBLE,
+    potassio DOUBLE,
+    nitrogenio DOUBLE
+);
+
+CREATE TABLE Solo(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    identificacao VARCHAR(50),
+    fosforo DOUBLE,
+    potassio DOUBLE,
+    nitrogenio DOUBLE,
+    cultura_id INT,
+    FOREIGN KEY(cultura_id) REFERENCES Cultura(id)
+);
+
+CREATE TABLE Sensor(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_sensor VARCHAR(10),
+    solo_id INT,
+    FOREIGN KEY(solo_id) REFERENCES Solo(id)
 );
