@@ -1,5 +1,7 @@
 ﻿using api_soil_breath.Data;
 using api_soil_breath.Entity;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 
 namespace api_soil_breath.Services
 {
@@ -12,21 +14,62 @@ namespace api_soil_breath.Services
             _context = context;
         }
 
-        public List<Solo> GetAllSolos()
+        public async Task<List<Solo>> GetAll()
         {
-            return _context.Solos.ToList();
+            return  await _context.Solos.ToListAsync();
         }
 
-        public void UpdateSolo(Solo solo)
+        public async Task<Solo> Update(Solo solo)
         {
-            var existingSolo = _context.Solos.Find(solo.Id);
+            var existingSolo = await _context.Solos.FindAsync(solo.Id);
             if (existingSolo != null)
             {
                 existingSolo.Fosforo = solo.Fosforo;
                 existingSolo.Potassio = solo.Potassio;
                 existingSolo.Nitrogenio = solo.Nitrogenio;
-                _context.SaveChanges();
+                existingSolo.Identificacao = solo.Identificacao;
+                _context.SaveChangesAsync();
             }
+
+            return solo;
+        }
+
+        public Solo Create(Solo solo)
+        {
+            _context.Solos.Add(solo);
+            _context.SaveChanges();
+            return solo;
+        }
+
+        public async Task<Solo> GetById(int id)
+        {
+            var solo = await _context.Solos.FindAsync(id);
+            if (solo == null) throw new Exception("Solo não encontrado!");
+            return solo;
+        }
+
+        public async Task Delete(int id)
+        {
+            var solo = await GetById(id);
+
+            _context.Solos.Remove(solo);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<Solo> UpdatePeriodic(SoloResponseEspDTO solo)
+        {
+            /*
+            var existingSolo = await _context.Solos.FindAsync(solo.Id);
+            if (existingSolo != null)
+            {
+                existingSolo.Fosforo = solo.Fosforo;
+                existingSolo.Potassio = solo.Potassio;
+                existingSolo.Nitrogenio = solo.Nitrogenio;
+                existingSolo.Identificacao = solo.Identificacao;
+                _context.SaveChangesAsync();
+            }
+            */
+            return new Solo();
         }
     }
 }

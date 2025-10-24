@@ -2,13 +2,13 @@
 
 namespace api_soil_breath.Entity
 {
-    [Table("Solos")]
+    [Table("Solo")]
     public class Solo
     {
         [Column("id")]
         public int Id { get; set; }
-        [Column("numero")]
-        public int Numero { get; set; }
+        [Column("identificacao")]
+        public string Identificacao { get; set; }
         [Column("nitrogenio")]
         public double Nitrogenio { get; set; }
         [Column("fosforo")]

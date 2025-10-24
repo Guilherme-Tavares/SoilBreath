@@ -7,12 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Registrar DbContext
 builder.Services.AddDbContext<DataBaseConfig>(options =>
     options.UseMySql(
-        "server=localhost;database=db_soilbreath;user=root;password=root;",
+        "server=localhost;database=db_soil;user=root;password=root;",
         new MySqlServerVersion(new Version(8, 0, 33))
     )
 );
 
-// Registrar HttpClient (necessário para IHttpClientFactory)
+// Registrar HttpClient (necessario para IHttpClientFactory)
 builder.Services.AddHttpClient();
 
 // Registrar HostedService

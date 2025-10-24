@@ -1,10 +1,12 @@
 ﻿using api_soil_breath.Data;
+using api_soil_breath.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -50,22 +52,32 @@ namespace api_soil_breath.Services
 
         private async Task SolicitaDadosEsp()
         {
-            // Criar client seguro
-            var client = _httpClientFactory.CreateClient();
+            try
+            {
+                // Criar client seguro
+                var client = _httpClientFactory.CreateClient();
 
-            // Exemplo de requisição (descomente se quiser chamar o ESP32)
-            var response = await client.GetAsync("http://10.171.229.94/");
-            response.EnsureSuccessStatusCode();
-            var content = await response.Content.ReadAsStringAsync();
-            _logger.LogInformation("Resposta do ESP: {content}", content);
-            
+                // Exemplo de requisição (descomente se quiser chamar o ESP32)
+                var response = await client.GetAsync("http://10.171.229.94/");
+                response.EnsureSuccessStatusCode();
+                var contentString = await response.Content.ReadAsStringAsync();
+                var content = JsonSerializer.Deserialize<SoloResponseEspDTO>(contentString);
 
-            // Aqui ao inves de select, fazer update nos solos
-            using var scope = _scopeFactory.CreateScope();
-            var soloService = scope.ServiceProvider.GetRequiredService<SoloService>();
-            var solos = soloService.GetAllSolos();
+                _logger.LogInformation("Resposta do ESP: {content}", content);
 
-            await Task.CompletedTask;
+
+                // Aqui ao inves de select, fazer update nos solos
+                using var scope = _scopeFactory.CreateScope();
+                var soloService = scope.ServiceProvider.GetRequiredService<SoloService>();
+
+                var soloUpdate = soloService.UpdatePeriodic(content);
+
+                await Task.CompletedTask;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro na atualização de dados: {ex.Message}");
+            }
         }
     }
 }
