@@ -56,20 +56,23 @@ namespace api_soil_breath.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Solo> UpdatePeriodic(SoloResponseEspDTO solo)
+        public async Task<SoloResponseEspDTO> UpdatePeriodic(SoloResponseEspDTO solo)
         {
-            /*
-            var existingSolo = await _context.Solos.FindAsync(solo.Id);
-            if (existingSolo != null)
+            
+            var existingSensor = await _context.Sensores.FindAsync(solo.IdSensor);
+            if (existingSensor != null)
             {
-                existingSolo.Fosforo = solo.Fosforo;
-                existingSolo.Potassio = solo.Potassio;
-                existingSolo.Nitrogenio = solo.Nitrogenio;
-                existingSolo.Identificacao = solo.Identificacao;
-                _context.SaveChangesAsync();
+                var existingSolo = await _context.Solos.FindAsync(existingSensor.SoloId);
+                if (existingSensor != null)
+                {
+                    existingSolo.Fosforo = solo.Fosforo;
+                    existingSolo.Potassio = solo.Potassio;
+                    existingSolo.Nitrogenio = solo.Nitrogenio;
+                    _context.SaveChangesAsync();
+                }
             }
-            */
-            return new Solo();
+            
+            return solo;
         }
     }
 }
