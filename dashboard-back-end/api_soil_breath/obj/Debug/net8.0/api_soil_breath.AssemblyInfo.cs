@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("api_soil_breath")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2c25c956485cf3019091eb5f6b7b6799ab17560")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0271e73121a4b0a431d39844d10a61d8013c1e8c")]
 [assembly: System.Reflection.AssemblyProductAttribute("api_soil_breath")]
 [assembly: System.Reflection.AssemblyTitleAttribute("api_soil_breath")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -11,5 +11,6 @@ namespace api_soil_breath.Data
         }
 
         public DbSet<Solo> Solos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
