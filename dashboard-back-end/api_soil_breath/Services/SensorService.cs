@@ -14,61 +14,44 @@ namespace api_soil_breath.Services
             _context = context;
         }
 
-        public async Task<List<Solo>> GetAll()
+        public async Task<List<Sensor>> GetAll(int idPropriedade)
         {
-            return  await _context.Solos.ToListAsync();
+            return await _context.Sensores.Where(s => s.Solo.Propriedade.Id == idPropriedade).Include(s => s.Solo).ToListAsync();
         }
 
-        public async Task<Solo> Update(Solo solo)
+        public async Task<Sensor> Update(Sensor sensor)
         {
-            var existingSolo = await _context.Solos.FindAsync(solo.Id);
-            if (existingSolo != null)
+            var existingSensor = await _context.Sensores.FindAsync(sensor.Id);
+            if (existingSensor != null)
             {
-                existingSolo.Fosforo = solo.Fosforo;
-                existingSolo.Potassio = solo.Potassio;
-                existingSolo.Nitrogenio = solo.Nitrogenio;
-                existingSolo.Identificacao = solo.Identificacao;
+                existingSensor.IdSensor = sensor.IdSensor;
+                existingSensor.SoloId = sensor.SoloId;
                 _context.SaveChangesAsync();
             }
 
-            return solo;
+            return sensor;
         }
 
-        public Solo Create(Solo solo)
+        public Sensor Create(Sensor sensor)
         {
-            _context.Solos.Add(solo);
+            _context.Sensores.Add(sensor);
             _context.SaveChanges();
-            return solo;
+            return sensor;
         }
 
-        public async Task<Solo> GetById(int id)
+        public async Task<Sensor> GetById(int id)
         {
-            var solo = await _context.Solos.FindAsync(id);
-            if (solo == null) throw new Exception("Solo não encontrado!");
-            return solo;
+            var sensor = await _context.Sensores.FindAsync(id);
+            if (sensor == null) throw new Exception("Sensor não encontrado!");
+            return sensor;
         }
 
         public async Task Delete(int id)
         {
-            var solo = await GetById(id);
+            var sensor = await GetById(id);
 
-            _context.Solos.Remove(solo);
+            _context.Sensores.Remove(sensor);
             await _context.SaveChangesAsync();
-        }
-
-        public async Task<SoloResponseEspDTO> UpdatePeriodic(SoloResponseEspDTO solo)
-        {
-            
-            var existingSensor = await _context.Sensores.FindAsync(solo.IdSensor);
-            if (existingSensor.Solo != null)
-            {
-                existingSensor.Solo.Fosforo = solo.Fosforo;
-                existingSensor.Solo.Potassio = solo.Potassio;
-                existingSensor.Solo.Nitrogenio = solo.Nitrogenio;
-                _context.SaveChangesAsync();
-            }
-            
-            return solo;
         }
     }
 }

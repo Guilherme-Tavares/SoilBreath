@@ -8,7 +8,7 @@ namespace api_soil_breath.Entity
         [Column("id")]
         public int Id { get; set; }
         [Column("id_sensor")]
-        public int IdSensor { get; set; }
+        public string IdSensor { get; set; }
 
         [Column("solo_id")]
         public int SoloId { get; set; }

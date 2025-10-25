@@ -24,7 +24,5 @@ namespace api_soil_breath.Entity
         public int PropriedadeId { get; set; }
         public Propriedade Propriedade { get; set; }
 
-        public ICollection<Sensor> Sensores { get; set; }
-        public ICollection<Propriedade> Propriedades { get; set; }
     }
 }

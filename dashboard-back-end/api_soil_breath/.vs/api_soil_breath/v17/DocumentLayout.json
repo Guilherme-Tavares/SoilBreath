@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\giori\\onedrive\\documentos\\3-ads\\soilbreath\\dashboard-back-end\\api_soil_breath\\dto\\solocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:dto\\solocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\giori\\onedrive\\documentos\\3-ads\\soilbreath\\dashboard-back-end\\api_soil_breath\\controllers\\solocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:controllers\\solocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\giori\\onedrive\\documentos\\3-ads\\soilbreath\\dashboard-back-end\\api_soil_breath\\services\\soloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:services\\soloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\giori\\onedrive\\documentos\\3-ads\\soilbreath\\dashboard-back-end\\api_soil_breath\\controllers\\sensorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:controllers\\sensorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\giori\\onedrive\\documentos\\3-ads\\soilbreath\\dashboard-back-end\\api_soil_breath\\services\\sensorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:services\\sensorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\giori\\onedrive\\documentos\\3-ads\\soilbreath\\dashboard-back-end\\api_soil_breath\\entity\\sensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:entity\\sensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\giori\\onedrive\\documentos\\3-ads\\soilbreath\\dashboard-back-end\\api_soil_breath\\entity\\solo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:entity\\solo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\giori\\onedrive\\documentos\\3-ads\\soilbreath\\dashboard-back-end\\api_soil_breath\\dto\\sensorcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:dto\\sensorcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\giori\\onedrive\\documentos\\3-ads\\soilbreath\\dashboard-back-end\\api_soil_breath\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\giori\\onedrive\\documentos\\3-ads\\soilbreath\\dashboard-back-end\\api_soil_breath\\services\\soloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:services\\soloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,69 +38,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SoloCreateDTO.cs",
-              "DocumentMoniker": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\DTO\\SoloCreateDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\SoloCreateDTO.cs",
-              "ToolTip": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\DTO\\SoloCreateDTO.cs",
-              "RelativeToolTip": "DTO\\SoloCreateDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "SensorCreateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\DTO\\SensorCreateDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\SensorCreateDTO.cs",
+              "ToolTip": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\DTO\\SensorCreateDTO.cs",
+              "RelativeToolTip": "DTO\\SensorCreateDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T15:35:07.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SoloController.cs",
-              "DocumentMoniker": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Controllers\\SoloController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SoloController.cs",
-              "ToolTip": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Controllers\\SoloController.cs",
-              "RelativeToolTip": "Controllers\\SoloController.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAIwFAAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T15:26:44.942Z",
+              "WhenOpened": "2025-10-25T16:04:32.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Solo.cs",
+              "DocumentMoniker": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Solo.cs",
+              "RelativeDocumentMoniker": "Entity\\Solo.cs",
+              "ToolTip": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Solo.cs",
+              "RelativeToolTip": "Entity\\Solo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T16:04:21.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SensorController.cs",
+              "DocumentMoniker": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Controllers\\SensorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SensorController.cs",
+              "ToolTip": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Controllers\\SensorController.cs",
+              "RelativeToolTip": "Controllers\\SensorController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAQwBQAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T15:51:06.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Sensor.cs",
+              "DocumentMoniker": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Sensor.cs",
+              "RelativeDocumentMoniker": "Entity\\Sensor.cs",
+              "ToolTip": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Sensor.cs",
+              "RelativeToolTip": "Entity\\Sensor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T15:49:45.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "SensorService.cs",
               "DocumentMoniker": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\SensorService.cs",
               "RelativeDocumentMoniker": "Services\\SensorService.cs",
               "ToolTip": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\SensorService.cs",
               "RelativeToolTip": "Services\\SensorService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBAAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-25T15:26:13.467Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "SoloService.cs",
               "DocumentMoniker": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\SoloService.cs",
               "RelativeDocumentMoniker": "Services\\SoloService.cs",
               "ToolTip": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\SoloService.cs",
               "RelativeToolTip": "Services\\SoloService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA1AAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-25T15:25:56.412Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\giori\\OneDrive\\Documentos\\3-ADS\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-12T02:47:54.469Z",
               "EditorCaption": ""

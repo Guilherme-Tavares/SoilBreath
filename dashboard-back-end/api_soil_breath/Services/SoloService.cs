@@ -16,7 +16,7 @@ namespace api_soil_breath.Services
 
         public async Task<List<Solo>> GetAll(int idPropriedade)
         {
-            return  await _context.Solos.Where(s => s.Propriedade.Id == idPropriedade).ToListAsync();
+            return  await _context.Solos.Where(s => s.Propriedade.Id == idPropriedade).Include(s => s.Propriedade).Include(s => s.Cultura).ToListAsync();
         }
 
         public async Task<Solo> Update(Solo solo)
