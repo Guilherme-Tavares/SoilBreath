@@ -31,7 +31,9 @@ CREATE TABLE Solo(
     potassio DOUBLE,
     nitrogenio DOUBLE,
     cultura_id INT,
-    FOREIGN KEY(cultura_id) REFERENCES Cultura(id)
+    FOREIGN KEY(cultura_id) REFERENCES Cultura(id),
+    propriedade_id INT NOT NULL,
+    FOREIGN KEY(propriedade_id) REFERENCES Propriedade(id)
 );
 
 CREATE TABLE Sensor(

@@ -5,18 +5,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace api_soil_breath.Services
 {
-    public class SoloService
+    public class SensorService
     {
         private readonly DataBaseConfig _context;
 
-        public SoloService(DataBaseConfig context)
+        public SensorService(DataBaseConfig context)
         {
             _context = context;
         }
 
-        public async Task<List<Solo>> GetAll(int idPropriedade)
+        public async Task<List<Solo>> GetAll()
         {
-            return  await _context.Solos.Where(s => s.Propriedade.Id == idPropriedade).ToListAsync();
+            return  await _context.Solos.ToListAsync();
         }
 
         public async Task<Solo> Update(Solo solo)

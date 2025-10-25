@@ -50,8 +50,8 @@ namespace api_soil_breath.Controllers
                     SenhaHash = BCrypt.Net.BCrypt.HashPassword(usuarioUpdateDTO.Senha)
                 };
 
-                var usuarioResult = _usuarioService.Update(usuario);
-                return Ok();
+                var usuarioResult = await _usuarioService.Update(usuario);
+                return Ok(usuarioResult);
             }
             catch (Exception ex)
             {

@@ -15,13 +15,13 @@ namespace api_soil_breath.Services
 
         public async Task<Usuario> Update(Usuario usuario)
         {
-            var existingUsuario = await _context.Usuarios.FindAsync(usuario.Id);
+            var existingUsuario = await GetById(usuario.Id);
             if (existingUsuario != null)
             {
-                existingUsuario.Nome = usuario.Nome;
+                /*existingUsuario.Nome = usuario.Nome;
                 existingUsuario.Email = usuario.Email;
                 existingUsuario.SenhaHash = usuario.SenhaHash;
-                _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();*/
             }
 
             return usuario;

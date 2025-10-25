@@ -6,5 +6,8 @@ namespace api_soil_breath.DTOs
         public double Nitrogenio { get; set; }
         public double Fosforo { get; set; }
         public double Potassio { get; set; }
+
+        public int IdCultura { get; set; }
+        public int IdPropriedade { get; set; }
     }
 }

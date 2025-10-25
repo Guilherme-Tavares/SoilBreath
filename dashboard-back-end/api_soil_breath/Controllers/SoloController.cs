@@ -17,11 +17,11 @@ namespace api_soil_breath.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll(int idPropriedade)
         {
             try
             {
-                var solos = await _soloService.GetAll();
+                var solos = await _soloService.GetAll(idPropriedade);
                 return Ok(solos);
             }
             catch (Exception ex)
@@ -77,7 +77,9 @@ namespace api_soil_breath.Controllers
                     Identificacao = dto.Identificacao,
                     Nitrogenio = dto.Nitrogenio,
                     Fosforo = dto.Fosforo,
-                    Potassio = dto.Potassio
+                    Potassio = dto.Potassio,
+                    CulturaId = dto.IdCultura,
+                    PropriedadeId = dto.IdPropriedade
                 };
 
                 var soloResult = _soloService.Create(solo);
