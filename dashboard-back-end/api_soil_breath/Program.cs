@@ -19,6 +19,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddHostedService<ChamadaEsp32Service>();
 builder.Services.AddScoped<SoloService>();
 builder.Services.AddScoped<UsuarioService>();
+builder.Services.AddScoped<SensorService>();
 
 // Add controllers e Swagger
 builder.Services.AddControllers();
