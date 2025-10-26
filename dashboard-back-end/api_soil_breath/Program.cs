@@ -4,6 +4,19 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+var corsPolicy = "AllowSpecificOrigin";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: corsPolicy, policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:8081", "https://meusite.com") // 🔹 URLs permitidas
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+              });
+});
+
 // Registrar DbContext
 builder.Services.AddDbContext<DataBaseConfig>(options =>
     options.UseMySql(
@@ -34,6 +47,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors(corsPolicy);
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

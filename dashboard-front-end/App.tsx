@@ -3,7 +3,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'react-native';
 import BottomTabNavigator from './src/navigation/BottomTabNavigator';
-import './src/global.css';
 
 export default function App() {
   return (

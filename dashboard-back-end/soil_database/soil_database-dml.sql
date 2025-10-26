@@ -1,3 +1,20 @@
-USE soil_database;
+USE db_soil;
 
-INSERT INTO soil(soil_id, nitrogen, phosphorus, potassium, moisture) VALUES(1, 0, 0, 0, 0);
+INSERT INTO Usuario (nome, email, senha_hash) 
+VALUES ('Teste', 'teste@teste.com', 'hash123');
+
+INSERT INTO Propriedade (nome, usuario_id) 
+VALUES ('Fazenda Teste', 1);
+
+INSERT INTO Cultura (nome, nitrogenio, fosforo, potassio) 
+VALUES ('Trigo', 50, 35, 200);
+
+INSERT INTO Solo (identificacao, nitrogenio, fosforo, potassio, cultura_id, propriedade_id) 
+VALUES ('Solo 01', 45.5, 28.3, 180.2, 1, 1);
+
+INSERT INTO Sensor (id_sensor, solo_id) 
+VALUES ('SENSOR001', 1);
+
+UPDATE Solo
+SET nitrogenio = 50, fosforo = 35, potassio = 200
+WHERE id=1;
