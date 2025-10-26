@@ -1,14 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
+import { View, Text, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
-const History = () => {
+export default function History() {
   return (
-    <ScrollView 
-      style={styles.container} 
-      contentContainerStyle={styles.contentContainer}
-      showsVerticalScrollIndicator={false}
-    >
+    <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Histórico</Text>
@@ -18,39 +14,31 @@ const History = () => {
       </View>
 
       {/* Content */}
-      <View style={styles.emptyStateContainer}>
+      <View style={styles.content}>
         <View style={styles.iconCircle}>
-          <Icon name="clock" size={40} color="#007AFF" />
+          <Ionicons name="time-outline" size={40} color="#3b82f6" />
         </View>
         
-        <Text style={styles.emptyTitle}>
-          Em Desenvolvimento
-        </Text>
+        <Text style={styles.title}>Em Desenvolvimento</Text>
         
-        <Text style={styles.emptyDescription}>
+        <Text style={styles.description}>
           O histórico de alterações dos nutrientes ainda não está disponível. 
           Em breve você poderá acompanhar a evolução da qualidade do solo ao longo do tempo.
         </Text>
       </View>
-
-      {/* Bottom Spacing for Navigation */}
-      <View style={styles.bottomSpacer} />
-    </ScrollView>
+    </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f8f9fa',
-  },
-  contentContainer: {
-    flexGrow: 1,
+    backgroundColor: '#f9fafb',
   },
   header: {
-    backgroundColor: '#007AFF',
+    backgroundColor: '#3b82f6',
     paddingHorizontal: 24,
-    paddingTop: 32,
+    paddingTop: 60,
     paddingBottom: 24,
     borderBottomLeftRadius: 24,
     borderBottomRightRadius: 24,
@@ -58,45 +46,40 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#ffffff',
+    color: 'white',
   },
   headerSubtitle: {
     fontSize: 14,
-    color: 'rgba(255, 255, 255, 0.9)',
+    color: 'white',
+    opacity: 0.9,
     marginTop: 4,
   },
-  emptyStateContainer: {
+  content: {
     flex: 1,
-    paddingHorizontal: 24,
-    paddingTop: 48,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: 24,
   },
   iconCircle: {
     width: 80,
     height: 80,
     borderRadius: 40,
-    backgroundColor: 'rgba(0, 122, 255, 0.1)',
+    backgroundColor: '#3b82f620',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 24,
   },
-  emptyTitle: {
+  title: {
     fontSize: 20,
     fontWeight: '600',
-    color: '#000000',
+    color: '#1f2937',
     marginBottom: 8,
   },
-  emptyDescription: {
+  description: {
     fontSize: 14,
-    color: '#8e8e93',
+    color: '#6b7280',
     textAlign: 'center',
     maxWidth: 320,
     lineHeight: 20,
   },
-  bottomSpacer: {
-    height: 100,
-  },
 });
-
-export default History;

@@ -1,13 +1,27 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export const NutrientCard = ({ nutrient }) => {
+interface Nutrient {
+  symbol: string;
+  name: string;
+  description: string;
+  current: number;
+  min: number;
+  max: number;
+  unit: string;
+}
+
+interface NutrientCardProps {
+  nutrient: Nutrient;
+}
+
+export const NutrientCard = ({ nutrient }: NutrientCardProps) => {
   const percentage = ((nutrient.current - nutrient.min) / (nutrient.max - nutrient.min)) * 100;
   const isOptimal = nutrient.current >= nutrient.min && nutrient.current <= nutrient.max;
 
   const getStatusColor = () => {
-    if (isOptimal) return '#34C759';
-    return '#FF9500';
+    if (isOptimal) return '#10b981'; // green
+    return '#f59e0b'; // yellow/warning
   };
 
   return (
@@ -22,16 +36,16 @@ export const NutrientCard = ({ nutrient }) => {
 
         {/* Content */}
         <View style={styles.info}>
-          <Text style={styles.title}>{nutrient.name}</Text>
+          <Text style={styles.name}>{nutrient.name}</Text>
           <Text style={styles.description}>{nutrient.description}</Text>
           
           {/* Value and Range */}
           <View style={styles.valueContainer}>
             <View>
-              <View style={styles.currentValueRow}>
-                <Text style={styles.currentValue}>{nutrient.current}</Text>
-                <Text style={styles.unit}>{nutrient.unit}</Text>
-              </View>
+              <Text style={styles.value}>
+                {nutrient.current}
+                <Text style={styles.unit}> {nutrient.unit}</Text>
+              </Text>
               <Text style={styles.range}>
                 Faixa adequada: {nutrient.min}–{nutrient.max}
               </Text>
@@ -46,18 +60,16 @@ export const NutrientCard = ({ nutrient }) => {
           </View>
 
           {/* Progress Bar */}
-          <View style={styles.progressBarContainer}>
-            <View style={styles.progressBarBackground}>
-              <View 
-                style={[
-                  styles.progressBarFill,
-                  { 
-                    width: `${Math.min(Math.max(percentage, 0), 100)}%`,
-                    backgroundColor: getStatusColor()
-                  }
-                ]}
-              />
-            </View>
+          <View style={styles.progressBarBackground}>
+            <View 
+              style={[
+                styles.progressBarFill,
+                { 
+                  width: `${Math.min(Math.max(percentage, 0), 100)}%`,
+                  backgroundColor: getStatusColor()
+                }
+              ]}
+            />
           </View>
         </View>
       </View>
@@ -67,17 +79,15 @@ export const NutrientCard = ({ nutrient }) => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#ffffff',
-    borderWidth: 1,
-    borderColor: '#e5e5e7',
+    backgroundColor: 'white',
     borderRadius: 16,
     padding: 20,
-    marginBottom: 12,
+    marginBottom: 16,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.05,
-    shadowRadius: 2,
-    elevation: 2,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   content: {
     flexDirection: 'row',
@@ -90,71 +100,64 @@ const styles = StyleSheet.create({
     width: 56,
     height: 56,
     borderRadius: 28,
-    backgroundColor: 'rgba(0, 122, 255, 0.1)',
+    backgroundColor: '#3b82f620',
     alignItems: 'center',
     justifyContent: 'center',
   },
   symbolText: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
-    color: '#007AFF',
+    color: '#3b82f6',
   },
   info: {
     flex: 1,
   },
-  title: {
+  name: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#000000',
-    marginBottom: 2,
+    color: '#1f2937',
   },
   description: {
     fontSize: 14,
-    color: '#8e8e93',
-    marginBottom: 12,
+    color: '#6b7280',
+    marginTop: 2,
   },
   valueContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 12,
+    marginTop: 12,
   },
-  currentValueRow: {
-    flexDirection: 'row',
-    alignItems: 'baseline',
-  },
-  currentValue: {
+  value: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#000000',
+    color: '#1f2937',
   },
   unit: {
     fontSize: 14,
-    color: '#8e8e93',
-    marginLeft: 4,
+    fontWeight: 'normal',
+    color: '#6b7280',
   },
   range: {
-    fontSize: 11,
-    color: '#8e8e93',
+    fontSize: 12,
+    color: '#6b7280',
     marginTop: 2,
   },
   statusBadge: {
     paddingHorizontal: 12,
-    paddingVertical: 6,
+    paddingVertical: 4,
     borderRadius: 12,
   },
   statusText: {
-    fontSize: 11,
+    fontSize: 12,
     fontWeight: '600',
-    color: '#ffffff',
-  },
-  progressBarContainer: {
-    marginTop: 4,
+    color: 'white',
   },
   progressBarBackground: {
     height: 8,
-    backgroundColor: '#f2f2f7',
+    backgroundColor: '#f3f4f6',
     borderRadius: 4,
+    marginTop: 12,
     overflow: 'hidden',
   },
   progressBarFill: {

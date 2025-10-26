@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "SoilBreath_ReactNative",
-    "slug": "SoilBreath_ReactNative",
+    "name": "farm-pulse-mobile",
+    "slug": "farm-pulse-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,7 +20,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
