@@ -147,3 +147,11 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\4º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\4º Período\IoT\SoilBreath\dashboard-back-end\api_soil_breath\obj\Debug\net8.0\api_soil_breath.pdb
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\4º Período\IoT\SoilBreath\dashboard-back-end\api_soil_breath\obj\Debug\net8.0\api_soil_breath.genruntimeconfig.cache
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\4º Período\IoT\SoilBreath\dashboard-back-end\api_soil_breath\obj\Debug\net8.0\ref\api_soil_breath.dll
+C:\Users\giori\OneDrive\Documentos\3-ADS\SoilBreath\dashboard-back-end\api_soil_breath\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\giori\OneDrive\Documentos\3-ADS\SoilBreath\dashboard-back-end\api_soil_breath\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\giori\OneDrive\Documentos\3-ADS\SoilBreath\dashboard-back-end\api_soil_breath\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\giori\OneDrive\Documentos\3-ADS\SoilBreath\dashboard-back-end\api_soil_breath\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\giori\OneDrive\Documentos\3-ADS\SoilBreath\dashboard-back-end\api_soil_breath\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\giori\OneDrive\Documentos\3-ADS\SoilBreath\dashboard-back-end\api_soil_breath\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\giori\OneDrive\Documentos\3-ADS\SoilBreath\dashboard-back-end\api_soil_breath\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\giori\OneDrive\Documentos\3-ADS\SoilBreath\dashboard-back-end\api_soil_breath\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

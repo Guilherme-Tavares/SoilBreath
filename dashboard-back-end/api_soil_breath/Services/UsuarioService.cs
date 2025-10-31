@@ -1,5 +1,6 @@
 ﻿using api_soil_breath.Data;
 using api_soil_breath.Entity;
+using api_soil_breath.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace api_soil_breath.Services
@@ -7,10 +8,12 @@ namespace api_soil_breath.Services
     public class UsuarioService
     {
         private readonly DataBaseConfig _context;
+        private readonly JwtHelper _jwt;
 
-        public UsuarioService(DataBaseConfig context)
+        public UsuarioService(DataBaseConfig context, JwtHelper jwt)
         {
             _context = context;
+            _jwt = jwt;
         }
 
         public async Task<Usuario> Update(Usuario usuario)
@@ -41,19 +44,16 @@ namespace api_soil_breath.Services
             return usuario;
         }
 
-        public async Task<Usuario> Login(string email, string senha)
+        public async Task<object> Login(string email, string senha)
         {
             var usuario = await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == email);
 
-            if (usuario == null) throw new Exception("Usuário não encontrado!");
+            if (usuario == null || BCrypt.Net.BCrypt.Verify(senha, usuario.SenhaHash)) throw new Exception("Email ou Senha inválidos!");
 
-            bool senhaCorreta = BCrypt.Net.BCrypt.Verify(senha, usuario.SenhaHash);
 
-            if (!senhaCorreta) throw new Exception("Senha incorreta!");
+            var token = _jwt.GenerateJwtToken(usuario.Id, usuario.Email);
 
-            usuario.SenhaHash = null;
-
-            return usuario;
+            return new { token };
         }
     }
 }
