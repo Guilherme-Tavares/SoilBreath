@@ -17,7 +17,7 @@ namespace api_soil_breath.Entity
         public double Potassio { get; set; }
 
         [Column("cultura_id")]
-        public int CulturaId { get; set; }
+        public int? CulturaId { get; set; }
         public Cultura Cultura { get; set; }
 
         [Column("propriedade_id")]

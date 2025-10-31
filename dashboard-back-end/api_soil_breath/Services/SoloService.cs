@@ -1,7 +1,6 @@
 ﻿using api_soil_breath.Data;
 using api_soil_breath.DTOs;
 using api_soil_breath.Entity;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace api_soil_breath.Services
@@ -15,60 +14,77 @@ namespace api_soil_breath.Services
             _context = context;
         }
 
-        public async Task<List<Solo>> GetAll(int idPropriedade)
+        public async Task<List<Solo>> GetAll(int idUser)
         {
-            return  await _context.Solos.Where(s => s.Propriedade.Id == idPropriedade).Include(s => s.Propriedade).Include(s => s.Cultura).ToListAsync();
+            return await _context.Solos
+                .Include(s => s.Propriedade)
+                    .ThenInclude(p => p.Usuario)
+                .Include(s => s.Cultura)
+                .Where(s => s.Propriedade.UsuarioId == idUser)
+                .ToListAsync();
         }
 
-        public async Task<Solo> Update(Solo solo)
+        public async Task<Solo> GetById(int id, int idUser)
         {
-            var existingSolo = await _context.Solos.FindAsync(solo.Id);
-            if (existingSolo != null)
-            {
-                existingSolo.Fosforo = solo.Fosforo;
-                existingSolo.Potassio = solo.Potassio;
-                existingSolo.Nitrogenio = solo.Nitrogenio;
-                existingSolo.Identificacao = solo.Identificacao;
-                _context.SaveChangesAsync();
-            }
+            var solo = await _context.Solos
+                .Include(s => s.Propriedade)
+                .Where(s => s.Id == id && s.Propriedade.UsuarioId == idUser)
+                .FirstOrDefaultAsync();
+
+            if (solo == null)
+                throw new Exception("Solo não encontrado.");
 
             return solo;
         }
 
-        public Solo Create(Solo solo)
+        public async Task<Solo> Update(Solo solo, int idUser)
         {
-            _context.Solos.Add(solo);
-            _context.SaveChanges();
-            return solo;
+            var existingSolo = await _context.Solos
+                .Include(s => s.Propriedade)
+                .Where(s => s.Id == solo.Id && s.Propriedade.UsuarioId == idUser)
+                .FirstOrDefaultAsync();
+
+            if (existingSolo == null)
+                throw new Exception("Solo não encontrado.");
+
+            existingSolo.Fosforo = solo.Fosforo;
+            existingSolo.Potassio = solo.Potassio;
+            existingSolo.Nitrogenio = solo.Nitrogenio;
+            existingSolo.Identificacao = solo.Identificacao;
+
+            await _context.SaveChangesAsync();
+            return existingSolo;
         }
 
-        public async Task<Solo> GetById(int id)
-        {
-            var solo = await _context.Solos.FindAsync(id);
-            if (solo == null) throw new Exception("Solo não encontrado!");
-            return solo;
+        public Solo Create(Solo solo) { 
+            _context.Solos.Add(solo); 
+            _context.SaveChanges(); 
+            return solo; 
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int id, int idUser)
         {
-            var solo = await GetById(id);
-
+            var solo = await GetById(id, idUser);
             _context.Solos.Remove(solo);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<SoloResponseEspDTO> UpdatePeriodic(SoloResponseEspDTO solo)
+        public async Task<SoloResponseEspDTO> UpdatePeriodic(SoloResponseEspDTO solo, int idUser)
         {
-            
-            var existingSensor = await _context.Sensores.FindAsync(solo.IdSensor);
-            if (existingSensor.Solo != null)
-            {
-                existingSensor.Solo.Fosforo = solo.Fosforo;
-                existingSensor.Solo.Potassio = solo.Potassio;
-                existingSensor.Solo.Nitrogenio = solo.Nitrogenio;
-                _context.SaveChangesAsync();
-            }
-            
+            var existingSensor = await _context.Sensores
+                .Include(s => s.Solo)
+                    .ThenInclude(solo => solo.Propriedade)
+                .Where(s => s.Id == solo.IdSensor && s.Solo.Propriedade.UsuarioId == idUser)
+                .FirstOrDefaultAsync();
+
+            if (existingSensor == null || existingSensor.Solo == null)
+                throw new Exception("Sensor não encontrado.");
+
+            existingSensor.Solo.Fosforo = solo.Fosforo;
+            existingSensor.Solo.Potassio = solo.Potassio;
+            existingSensor.Solo.Nitrogenio = solo.Nitrogenio;
+
+            await _context.SaveChangesAsync();
             return solo;
         }
     }

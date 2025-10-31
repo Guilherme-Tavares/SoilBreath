@@ -1,7 +1,10 @@
 ﻿using api_soil_breath.DTO;
 using api_soil_breath.Entity;
 using api_soil_breath.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace api_soil_breath.Controllers
 {
@@ -37,11 +40,13 @@ namespace api_soil_breath.Controllers
             }
         }
 
-        [HttpPatch("{id}")]
-        public async Task<IActionResult> Update(int id, UsuarioUpdateDTO usuarioUpdateDTO)
+        [HttpPatch()]
+        [Authorize]
+        public async Task<IActionResult> Update(UsuarioUpdateDTO usuarioUpdateDTO)
         {
             try
             {
+                var id = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
                 var usuario = new Usuario
                 {
                     Id = id,
