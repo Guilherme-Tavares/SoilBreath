@@ -47,7 +47,8 @@ namespace api_soil_breath.Services
         public async Task<object> Login(string email, string senha)
         {
             var usuario = await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == email);
-            if (usuario == null || BCrypt.Net.BCrypt.Verify(senha, usuario.SenhaHash)) throw new Exception("Email ou Senha inválidos!");
+            
+            if (usuario == null || !BCrypt.Net.BCrypt.Verify(senha, usuario.SenhaHash)) throw new Exception("Email ou Senha inválidos!");
 
             var token = _jwt.GenerateJwtToken(usuario.Id, usuario.Email);
 

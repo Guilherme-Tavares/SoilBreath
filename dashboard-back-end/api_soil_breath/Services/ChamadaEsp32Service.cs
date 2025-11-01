@@ -40,7 +40,7 @@ namespace api_soil_breath.Services
                 try
                 {
                     await SolicitaDadosEsp();
-                    _logger.LogInformation("Função executada em: {time}", DateTimeOffset.Now);
+                    //_logger.LogInformation("Função executada em: {time}", DateTimeOffset.Now);
                 }
                 catch (Exception ex)
                 {
@@ -59,19 +59,20 @@ namespace api_soil_breath.Services
                 var client = _httpClientFactory.CreateClient();
 
                 // Exemplo de requisição (descomente se quiser chamar o ESP32)
-                var response = await client.GetAsync("http://10.171.229.94/");
+                //var response = await client.GetAsync("http://10.171.229.94/");
+                var response = await client.GetAsync("http://localhost:8081/json");
                 response.EnsureSuccessStatusCode();
                 var contentString = await response.Content.ReadAsStringAsync();
                 var content = JsonSerializer.Deserialize<SoloResponseEspDTO>(contentString);
 
-                _logger.LogInformation("Resposta do ESP: {content}", content);
+                //_logger.LogInformation("Resposta do ESP: {content}", content.Nitrogenio);
 
 
                 // Aqui ao inves de select, fazer update nos solos
                 using var scope = _scopeFactory.CreateScope();
                 var soloService = scope.ServiceProvider.GetRequiredService<SoloService>();
 
-                var soloUpdate = soloService.UpdatePeriodic(content);
+                var soloUpdate = await soloService.UpdatePeriodic(content);
 
                 await Task.CompletedTask;
             }

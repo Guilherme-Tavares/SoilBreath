@@ -51,6 +51,8 @@ namespace api_soil_breath.Services
             existingSolo.Potassio = solo.Potassio;
             existingSolo.Nitrogenio = solo.Nitrogenio;
             existingSolo.Identificacao = solo.Identificacao;
+            existingSolo.Umidade = solo.Umidade;
+            existingSolo.CulturaId = solo.CulturaId;
 
             await _context.SaveChangesAsync();
             return existingSolo;
@@ -69,12 +71,12 @@ namespace api_soil_breath.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<SoloResponseEspDTO> UpdatePeriodic(SoloResponseEspDTO solo, int idUser)
+        public async Task<SoloResponseEspDTO> UpdatePeriodic(SoloResponseEspDTO solo)
         {
             var existingSensor = await _context.Sensores
                 .Include(s => s.Solo)
                     .ThenInclude(solo => solo.Propriedade)
-                .Where(s => s.Id == solo.IdSensor && s.Solo.Propriedade.UsuarioId == idUser)
+                .Where(s => s.Id == solo.IdSensor)
                 .FirstOrDefaultAsync();
 
             if (existingSensor == null || existingSensor.Solo == null)
@@ -83,6 +85,7 @@ namespace api_soil_breath.Services
             existingSensor.Solo.Fosforo = solo.Fosforo;
             existingSensor.Solo.Potassio = solo.Potassio;
             existingSensor.Solo.Nitrogenio = solo.Nitrogenio;
+            existingSensor.Solo.Umidade = solo.UmidadeSolo;
 
             await _context.SaveChangesAsync();
             return solo;

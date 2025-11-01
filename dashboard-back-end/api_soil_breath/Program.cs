@@ -63,7 +63,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "API Zappix Software",
+        Title = "API Soil Software",
         Version = "v1"
     });
 
@@ -101,6 +101,7 @@ builder.Services.AddHostedService<ChamadaEsp32Service>();
 builder.Services.AddScoped<SoloService>();
 builder.Services.AddScoped<UsuarioService>();
 builder.Services.AddScoped<SensorService>();
+builder.Services.AddScoped<DashboardService>();
 
 // Add controllers e Swagger
 builder.Services.AddControllers();

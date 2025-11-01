@@ -21,7 +21,8 @@ CREATE TABLE Cultura(
     nome VARCHAR(255),
     fosforo DOUBLE,
     potassio DOUBLE,
-    nitrogenio DOUBLE
+    nitrogenio DOUBLE,
+    umidade DOUBLE
 );
 
 CREATE TABLE Solo(
@@ -30,6 +31,7 @@ CREATE TABLE Solo(
     fosforo DOUBLE,
     potassio DOUBLE,
     nitrogenio DOUBLE,
+    umidade DOUBLE,
     cultura_id INT,
     FOREIGN KEY(cultura_id) REFERENCES Cultura(id),
     propriedade_id INT NOT NULL,

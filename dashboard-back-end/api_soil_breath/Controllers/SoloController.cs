@@ -63,7 +63,8 @@ namespace api_soil_breath.Controllers
                     Identificacao = dto.Identificacao,
                     Nitrogenio = dto.Nitrogenio,
                     Fosforo = dto.Fosforo,
-                    Potassio = dto.Potassio
+                    Potassio = dto.Potassio,
+                    Umidade = dto.Umidade
                 };
                 var soloResult = await _soloService.Update(solo, idUser);
                 return Ok(soloResult);
