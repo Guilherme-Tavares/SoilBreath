@@ -22,7 +22,7 @@ export default function Dashboard() {
       setLoading(true);
       setError(null);
 
-      console.log('🌐 Chamando API:', 'http://localhost:5135/api/Solo?idPropriedade=1');
+      console.log('🌐 Chamando API:', 'http://localhost:7137/api/Solo?idPropriedade=1');
       const response = await soloService.getSolos(1);
       console.log('Resposta da API:', response);
 
@@ -35,7 +35,18 @@ export default function Dashboard() {
       }
     } catch (err: any) {
       console.error('Erro capturado:', err);
-      setError(err.message || 'Erro ao buscar dados');
+      console.error('Detalhes do erro:', JSON.stringify(err, null, 2));
+      
+      // Mensagens de erro mais específicas
+      let errorMessage = 'Erro ao buscar dados';
+      
+      if (err.message?.includes("Unknown column 's.umidade'")) {
+        errorMessage = 'Erro no banco de dados: coluna "umidade" não existe. Verifique a estrutura da tabela Solo no backend.';
+      } else if (err.message) {
+        errorMessage = err.message;
+      }
+      
+      setError(errorMessage);
     } finally {
       console.log('Finalizando busca');
       setLoading(false);
@@ -129,7 +140,7 @@ export default function Dashboard() {
           <Text style={styles.progressSubtitle}>Baseado nos nutrientes NPK</Text>
         </View>
 
-        {/* Environmental Data (Exemplo - você pode adicionar depois) */}
+        {/* Environmental Data */}
         <View style={styles.environmentalGrid}>
           <View style={styles.environmentalCard}>
             <View style={styles.iconContainer}>
@@ -137,7 +148,11 @@ export default function Dashboard() {
             </View>
             <View>
               <Text style={styles.environmentalLabel}>Umidade</Text>
-              <Text style={styles.environmentalValue}>--</Text>
+              <Text style={styles.environmentalValue}>
+                {soloData?.umidade != null 
+                  ? `${soloData.umidade.toFixed(1)}%` 
+                  : '--'}
+              </Text>
             </View>
           </View>
 
@@ -147,7 +162,11 @@ export default function Dashboard() {
             </View>
             <View>
               <Text style={styles.environmentalLabel}>Temperatura</Text>
-              <Text style={styles.environmentalValue}>--</Text>
+              <Text style={styles.environmentalValue}>
+                {soloData?.temperatura != null 
+                  ? `${soloData.temperatura.toFixed(1)}°C` 
+                  : '--'}
+              </Text>
             </View>
           </View>
         </View>

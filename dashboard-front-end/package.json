@@ -1,5 +1,6 @@
 {
-  "name": "farm-pulse-mobile",
+  "name": "dashboard-front-end",
+  "proxy": "https://localhost:7137",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {

@@ -1,6 +1,6 @@
 // Configurações da API
 export const API_CONFIG = {
-  BASE_URL: 'http://localhost:5135/api', // Para testes no navegador
+  BASE_URL: 'https://localhost:7137/api', // Para testes no navegador
   TIMEOUT: 10000, // 10 segundos
 };
 

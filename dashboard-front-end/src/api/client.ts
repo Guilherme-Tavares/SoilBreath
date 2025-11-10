@@ -17,10 +17,29 @@ export interface ApiError {
 class ApiClient {
   private baseUrl: string;
   private timeout: number;
+  private token: string | null = null;
 
   constructor() {
     this.baseUrl = API_CONFIG.BASE_URL;
     this.timeout = API_CONFIG.TIMEOUT;
+  }
+
+  // Definir token de autenticação
+  setToken(token: string | null) {
+    this.token = token;
+  }
+
+  // Obter headers com ou sem autenticação
+  private getHeaders(): HeadersInit {
+    const headers: HeadersInit = {
+      'Content-Type': 'application/json',
+    };
+
+    if (this.token) {
+      headers['Authorization'] = `Bearer ${this.token}`;
+    }
+
+    return headers;
   }
 
   // GET request
@@ -31,16 +50,26 @@ class ApiClient {
 
       const response = await fetch(`${this.baseUrl}${endpoint}`, {
         method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: this.getHeaders(),
         signal: controller.signal,
       });
 
       clearTimeout(timeoutId);
 
       if (!response.ok) {
-        throw new Error(`HTTP Error: ${response.status}`);
+        // Tentar ler mensagem de erro da API
+        let errorMessage = `HTTP Error: ${response.status}`;
+        try {
+          const errorData = await response.json();
+          if (errorData.message) {
+            errorMessage = errorData.message;
+          } else if (errorData.error) {
+            errorMessage = errorData.error;
+          }
+        } catch {
+          // Se não conseguir parsear JSON, manter mensagem padrão
+        }
+        throw new Error(errorMessage);
       }
 
       const data = await response.json();
@@ -62,9 +91,7 @@ class ApiClient {
 
       const response = await fetch(`${this.baseUrl}${endpoint}`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: this.getHeaders(),
         body: JSON.stringify(body),
         signal: controller.signal,
       });
@@ -72,7 +99,19 @@ class ApiClient {
       clearTimeout(timeoutId);
 
       if (!response.ok) {
-        throw new Error(`HTTP Error: ${response.status}`);
+        // Tentar ler mensagem de erro da API
+        let errorMessage = `HTTP Error: ${response.status}`;
+        try {
+          const errorData = await response.json();
+          if (errorData.message) {
+            errorMessage = errorData.message;
+          } else if (errorData.error) {
+            errorMessage = errorData.error;
+          }
+        } catch {
+          // Se não conseguir parsear JSON, manter mensagem padrão
+        }
+        throw new Error(errorMessage);
       }
 
       const data = await response.json();

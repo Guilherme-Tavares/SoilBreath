@@ -23,6 +23,9 @@ namespace api_soil_breath.Entity
         [Column("umidade")]
         public double Umidade { get; set; }
 
+        [Column("temperatura")]
+        public double Temperatura { get; set; }
+
         [Column("cultura_id")]
         public int? CulturaId { get; set; }
         public Cultura Cultura { get; set; }

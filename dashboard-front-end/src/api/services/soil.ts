@@ -8,6 +8,8 @@ export interface Solo {
   nitrogenio: number;
   fosforo: number;
   potassio: number;
+  umidade?: number;
+  temperatura?: number;
   culturaId: number;
   propriedadeId: number;
   // Relacionamentos (opcional)

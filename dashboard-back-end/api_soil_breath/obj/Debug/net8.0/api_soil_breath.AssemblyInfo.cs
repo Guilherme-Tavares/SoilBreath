@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("api_soil_breath")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3110a1632f900847016244975d8399e0555c5f39")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60421e375d2664820d9c77268ca4632036ac2c48")]
 [assembly: System.Reflection.AssemblyProductAttribute("api_soil_breath")]
 [assembly: System.Reflection.AssemblyTitleAttribute("api_soil_breath")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

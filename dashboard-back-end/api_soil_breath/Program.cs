@@ -16,9 +16,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: corsPolicy, policy =>
     {
         policy
-            .WithOrigins("http://localhost:8081", "https://meusite.com") // 🔹 URLs permitidas
+            .WithOrigins("http://localhost:8081", "https://localhost:8081", "http://localhost:7137") // 🔹 URLs permitidas
             .AllowAnyHeader()
-            .AllowAnyMethod();
+            .AllowAnyMethod()
+            .AllowCredentials();
               });
 });
 
@@ -115,9 +116,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseCors(corsPolicy);
 app.UseHttpsRedirection();
+app.UseCors(corsPolicy);
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
