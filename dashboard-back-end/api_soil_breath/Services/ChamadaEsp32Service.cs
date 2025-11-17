@@ -18,7 +18,7 @@ namespace api_soil_breath.Services
         private readonly ILogger<ChamadaEsp32Service> _logger;
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly IServiceScopeFactory _scopeFactory;
-        private readonly TimeSpan _interval = TimeSpan.FromSeconds(10);
+        private readonly TimeSpan _interval = TimeSpan.FromSeconds(3);
 
         public ChamadaEsp32Service(
             ILogger<ChamadaEsp32Service> logger,
@@ -59,8 +59,8 @@ namespace api_soil_breath.Services
                 var client = _httpClientFactory.CreateClient();
 
                 // Exemplo de requisição (descomente se quiser chamar o ESP32)
-                //var response = await client.GetAsync("http://10.171.229.94/");
-                var response = await client.GetAsync("http://localhost:8081/json");
+                var response = await client.GetAsync("http://192.168.4.1/json");
+                //var response = await client.GetAsync("http://localhost:8081/json");
                 response.EnsureSuccessStatusCode();
                 var contentString = await response.Content.ReadAsStringAsync();
                 var content = JsonSerializer.Deserialize<SoloResponseEspDTO>(contentString);

@@ -22,7 +22,8 @@ CREATE TABLE Cultura(
     fosforo DOUBLE,
     potassio DOUBLE,
     nitrogenio DOUBLE,
-    umidade DOUBLE
+    umidade DOUBLE,
+    temperatura DOUBLE
 );
 
 CREATE TABLE Solo(
@@ -35,7 +36,8 @@ CREATE TABLE Solo(
     cultura_id INT,
     FOREIGN KEY(cultura_id) REFERENCES Cultura(id),
     propriedade_id INT NOT NULL,
-    FOREIGN KEY(propriedade_id) REFERENCES Propriedade(id)
+    FOREIGN KEY(propriedade_id) REFERENCES Propriedade(id),
+    temperatura DOUBLE
 );
 
 CREATE TABLE Sensor(

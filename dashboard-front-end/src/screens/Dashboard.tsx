@@ -1,20 +1,54 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { RadialProgress } from '../components/RadialProgress';
 import { NutrientCard } from '../components/NutrientCard';
+import ConfirmModal from '../components/ConfirmModal';
+import SuccessModal from '../components/SuccessModal';
 import { soloService, Solo } from '../api/services/soil';
+import { useAuth } from '../contexts/AuthContext';
 
 export default function Dashboard() {
   // Estados
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [soloData, setSoloData] = useState<Solo | null>(null);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const { logout } = useAuth();
 
   // Buscar dados da API quando o componente carregar
   useEffect(() => {
     fetchSoloData();
   }, []);
+
+  const handleLogoutPress = () => {
+    setShowLogoutModal(true);
+  };
+
+  const handleLogoutConfirm = async () => {
+    setShowLogoutModal(false);
+    await logout();
+    // Mostrar modal de sucesso após um pequeno delay
+    setTimeout(() => {
+      setShowSuccessModal(true);
+    }, 300);
+  };
+
+  const handleLogoutCancel = () => {
+    setShowLogoutModal(false);
+  };
+
+  const handleSuccessModalClose = () => {
+    setShowSuccessModal(false);
+  };
+
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    await fetchSoloData();
+    setRefreshing(false);
+  };
 
   const fetchSoloData = async () => {
     try {
@@ -126,18 +160,46 @@ export default function Dashboard() {
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Análise de Solo</Text>
-        <Text style={styles.headerSubtitle}>
-          {soloData?.identificacao || 'Solo sem identificação'}
-        </Text>
+        <View style={styles.headerLeft}>
+          <Text style={styles.headerTitle}>Análise de Solo</Text>
+          <Text style={styles.headerSubtitle}>
+            {soloData?.identificacao || 'Solo sem identificação'}
+          </Text>
+        </View>
+        <TouchableOpacity 
+          onPress={handleLogoutPress} 
+          style={styles.logoutButton}
+          activeOpacity={0.7}
+        >
+          <Ionicons name="log-out-outline" size={24} color="white" />
+        </TouchableOpacity>
       </View>
 
       {/* Radial Progress Card */}
       <View style={styles.progressCard}>
-        <View style={styles.progressContent}>
-          <RadialProgress value={calcularAptidao()} size={180} strokeWidth={12} />
-          <Text style={styles.progressTitle}>Aptidão do Solo</Text>
-          <Text style={styles.progressSubtitle}>Baseado nos nutrientes NPK</Text>
+        <View style={styles.progressHeader}>
+          <View style={styles.progressContent}>
+            <RadialProgress value={calcularAptidao()} size={180} strokeWidth={12} />
+            <Text style={styles.progressTitle}>Aptidão do Solo</Text>
+            <Text style={styles.progressSubtitle}>Baseado nos nutrientes NPK</Text>
+          </View>
+          
+          {/* Botão de Atualizar */}
+          <TouchableOpacity 
+            onPress={handleRefresh} 
+            style={styles.refreshButton}
+            disabled={refreshing}
+            activeOpacity={0.7}
+          >
+            <Ionicons 
+              name="refresh" 
+              size={20} 
+              color={refreshing ? "#9ca3af" : "#3b82f6"} 
+            />
+            <Text style={[styles.refreshButtonText, refreshing && styles.refreshButtonTextDisabled]}>
+              {refreshing ? 'Atualizando...' : 'Atualizar Dados'}
+            </Text>
+          </TouchableOpacity>
         </View>
 
         {/* Environmental Data */}
@@ -179,6 +241,30 @@ export default function Dashboard() {
           <NutrientCard key={nutrient.symbol} nutrient={nutrient} />
         ))}
       </View>
+
+      {/* Modal de Confirmação de Logout */}
+      <ConfirmModal
+        visible={showLogoutModal}
+        title="Confirmar Saída"
+        message="Deseja realmente sair da sua conta?"
+        icon="log-out-outline"
+        iconColor="#ef4444"
+        confirmText="Sair"
+        cancelText="Cancelar"
+        confirmStyle="destructive"
+        onConfirm={handleLogoutConfirm}
+        onCancel={handleLogoutCancel}
+      />
+
+      {/* Modal de Sucesso */}
+      <SuccessModal
+        visible={showSuccessModal}
+        title="Até logo! 👋"
+        message="Você foi desconectado com sucesso."
+        icon="checkmark-circle"
+        buttonText="OK"
+        onClose={handleSuccessModalClose}
+      />
     </ScrollView>
   );
 }
@@ -223,6 +309,19 @@ const styles = StyleSheet.create({
     paddingBottom: 48,
     borderBottomLeftRadius: 24,
     borderBottomRightRadius: 24,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  headerLeft: {
+    flex: 1,
+  },
+  logoutButton: {
+    padding: 10,
+    borderRadius: 12,
+    backgroundColor: 'rgba(255, 255, 255, 0.15)',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.3)',
   },
   headerTitle: {
     fontSize: 24,
@@ -247,8 +346,32 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 5,
   },
+  progressHeader: {
+    width: '100%',
+  },
   progressContent: {
     alignItems: 'center',
+    marginBottom: 20,
+  },
+  refreshButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    backgroundColor: '#eff6ff',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#bfdbfe',
+  },
+  refreshButtonText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#3b82f6',
+  },
+  refreshButtonTextDisabled: {
+    color: '#9ca3af',
   },
   progressTitle: {
     fontSize: 18,

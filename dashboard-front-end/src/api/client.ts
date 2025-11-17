@@ -18,6 +18,7 @@ class ApiClient {
   private baseUrl: string;
   private timeout: number;
   private token: string | null = null;
+  private onTokenExpired?: () => void;
 
   constructor() {
     this.baseUrl = API_CONFIG.BASE_URL;
@@ -27,6 +28,16 @@ class ApiClient {
   // Definir token de autenticação
   setToken(token: string | null) {
     this.token = token;
+  }
+
+  // Obter token atual
+  getToken(): string | null {
+    return this.token;
+  }
+
+  // Definir callback para quando o token expirar
+  setTokenExpiredCallback(callback: () => void) {
+    this.onTokenExpired = callback;
   }
 
   // Obter headers com ou sem autenticação
@@ -57,6 +68,14 @@ class ApiClient {
       clearTimeout(timeoutId);
 
       if (!response.ok) {
+        // Verificar se é erro de autenticação (token expirado/inválido)
+        if (response.status === 401) {
+          if (this.onTokenExpired) {
+            this.onTokenExpired();
+          }
+          throw new Error('Sessão expirada. Por favor, faça login novamente.');
+        }
+
         // Tentar ler mensagem de erro da API
         let errorMessage = `HTTP Error: ${response.status}`;
         try {
@@ -99,6 +118,14 @@ class ApiClient {
       clearTimeout(timeoutId);
 
       if (!response.ok) {
+        // Verificar se é erro de autenticação (token expirado/inválido)
+        if (response.status === 401) {
+          if (this.onTokenExpired) {
+            this.onTokenExpired();
+          }
+          throw new Error('Sessão expirada. Por favor, faça login novamente.');
+        }
+
         // Tentar ler mensagem de erro da API
         let errorMessage = `HTTP Error: ${response.status}`;
         try {
