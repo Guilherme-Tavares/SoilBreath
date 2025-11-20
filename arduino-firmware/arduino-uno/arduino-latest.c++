@@ -1,14 +1,20 @@
 #include <ModbusMaster.h>
 #include <SoftwareSerial.h>
+#include <DHT.h>
 
 #define RE 8
 #define DE 7
+
+// Pinos e configuração do sensor DHT11
+#define DHTPIN 10         // Pino digital D10 conectado ao DATA do DHT11
+#define DHTTYPE DHT11     // Tipo do sensor: DHT11
 
 // Pinos do sensor de umidade do solo
 const int PINO_UMIDADE_ANALOGICO = A0;  // Pino para leitura analógica (AO)
 
 SoftwareSerial mod(2, 3); // RX, TX
 ModbusMaster node;
+DHT dht(DHTPIN, DHTTYPE); // Inicializa sensor DHT11
 
 void preTransmission() {
   digitalWrite(DE, HIGH);
@@ -33,6 +39,9 @@ void setup() {
   node.preTransmission(preTransmission);
   node.postTransmission(postTransmission);
 
+  // Inicializa sensor DHT11
+  dht.begin();
+
   Serial.println(F("Iniciando leitura NPK com endereços revisados..."));
   delay(1000);
 }
@@ -43,6 +52,8 @@ void loop() {
   uint16_t potassio = 0;
   int valorAnalogico = 0;
   int percentualUmidade = 0;
+  float temperatura = 0.0;
+  float umidadeAr = 0.0;
 
 
   // --- Leitura do Nitrogênio (Hipótese 2: Addr 0x01) ---
@@ -69,6 +80,17 @@ void loop() {
   percentualUmidade = map(valorAnalogico, 1023, 300, 0, 100);
   percentualUmidade = constrain(percentualUmidade, 0, 100);
 
+  // --- Leitura do Sensor DHT11 (Temperatura e Umidade do Ar) ---
+  umidadeAr = dht.readHumidity();
+  temperatura = dht.readTemperature();
+  
+  // Verifica se a leitura falhou
+  if (isnan(umidadeAr) || isnan(temperatura)) {
+    // Em caso de erro, mantém valores zerados
+    umidadeAr = 0.0;
+    temperatura = 0.0;
+  }
+
   // --- Exibição dos Resultados ---
  Serial.println(F("------------------------------"));
   Serial.print(F("Nitrogênio (N) [Addr 0x0001]: ")); 
@@ -85,6 +107,14 @@ void loop() {
 
   Serial.print(F("Umidade do Solo [A0]:         "));
   Serial.print(percentualUmidade);
+  Serial.println(F(" %"));
+
+  Serial.print(F("Temperatura do Ar [D10]:      "));
+  Serial.print(temperatura, 1);
+  Serial.println(F(" °C"));
+
+  Serial.print(F("Umidade do Ar [D10]:          "));
+  Serial.print(umidadeAr, 1);
   Serial.println(F(" %"));
 
   delay(3000); // Aguarda 3 segundos para o próximo ciclo de leitura

@@ -30,6 +30,13 @@ struct MoistureData {
   unsigned long lastUpdate = 0;
 } moistureData;
 
+// Variáveis para armazenar valores do sensor DHT11 (temperatura e umidade do ar)
+struct DHTData {
+  float temperatura = 0.0;
+  float umidadeAr = 0.0;
+  unsigned long lastUpdate = 0;
+} dhtData;
+
 // Buffer para leitura serial
 String serialBuffer = "";
 
@@ -200,6 +207,41 @@ void parseSerialData(String data) {
       Serial.println("%");
     }
   }
+  // Temperatura do Ar detecta: "Temperatura do Ar" ou "[D5]"
+  else if (data.indexOf("Temperatura do Ar") >= 0 || (data.indexOf("[D5]") >= 0 && data.indexOf("Temperatura") >= 0)) {
+    int idx = data.indexOf("]:") + 2;
+    if (idx > 1) {
+      String value = data.substring(idx);
+      value.trim();
+      // Remove " °C" se existir
+      int unitIdx = value.indexOf(" ");
+      if (unitIdx > 0) {
+        value = value.substring(0, unitIdx);
+      }
+      dhtData.temperatura = value.toFloat();
+      dhtData.lastUpdate = millis();
+      Serial.print("✓ Temperatura: ");
+      Serial.print(dhtData.temperatura);
+      Serial.println("°C");
+    }
+  }
+  // Umidade do Ar detecta: "Umidade do Ar" (distinguindo de "Umidade do Solo")
+  else if (data.indexOf("Umidade do Ar") >= 0) {
+    int idx = data.indexOf("]:") + 2;
+    if (idx > 1) {
+      String value = data.substring(idx);
+      value.trim();
+      // Remove " %" se existir
+      int percentIdx = value.indexOf(" %");
+      if (percentIdx > 0) {
+        value = value.substring(0, percentIdx);
+      }
+      dhtData.umidadeAr = value.toFloat();
+      Serial.print("✓ Umidade do Ar: ");
+      Serial.print(dhtData.umidadeAr);
+      Serial.println("%");
+    }
+  }
 }
 
 // Página HTML principal
@@ -296,6 +338,8 @@ void handleRoot() {
   html += "          document.getElementById('fosforo').textContent = data.fosforo;\n";
   html += "          document.getElementById('potassio').textContent = data.potassio;\n";
   html += "          document.getElementById('umidade').textContent = data.umidadeSolo;\n";
+  html += "          document.getElementById('temperatura').textContent = data.temperatura.toFixed(1);\n";
+  html += "          document.getElementById('umidadeAr').textContent = data.umidadeAr.toFixed(1);\n";
   html += "          document.getElementById('lastUpdate').textContent = 'Última atualização: ' + new Date().toLocaleTimeString('pt-BR');\n";
   html += "        });\n";
   html += "    }\n";
@@ -327,6 +371,16 @@ void handleRoot() {
   html += "      <div class='card-value'><span id='umidade'>" + String(moistureData.percentualUmidade) + "</span><span class='card-unit'>%</span></div>\n";
   html += "    </div>\n";
   html += "    \n";
+  html += "    <div class='card'>\n";
+  html += "      <div class='card-title'>🌡️ Temperatura do Ar</div>\n";
+  html += "      <div class='card-value'><span id='temperatura'>" + String(dhtData.temperatura, 1) + "</span><span class='card-unit'>°C</span></div>\n";
+  html += "    </div>\n";
+  html += "    \n";
+  html += "    <div class='card'>\n";
+  html += "      <div class='card-title'>💨 Umidade do Ar</div>\n";
+  html += "      <div class='card-value'><span id='umidadeAr'>" + String(dhtData.umidadeAr, 1) + "</span><span class='card-unit'>%</span></div>\n";
+  html += "    </div>\n";
+  html += "    \n";
   html += "    <div class='update-time' id='lastUpdate'>Última atualização: " + String(npkData.lastUpdate / 1000) + "s</div>\n";
   html += "    \n";
   html += "    <a href='/json' class='json-link' target='_blank'>📊 Ver dados em JSON</a>\n";
@@ -346,11 +400,17 @@ void handleJSON() {
   json += "  \"fosforo\": " + String(npkData.fosforo) + ",\n";
   json += "  \"potassio\": " + String(npkData.potassio) + ",\n";
   json += "  \"unidadeNpk\": \"mg/kg\",\n";
-  json += "  \"lastUpdate\": " + String(npkData.lastUpdate) + ",\n";
+  json += "  \"lastUpdateNPK\": " + String(npkData.lastUpdate) + ",\n";
   json += "  \"moistureSensorId\": 2,\n";
   json += "  \"umidadeSolo\": " + String(moistureData.percentualUmidade) + ",\n";
-  json += "  \"unidadeUmidade\": \"%\",\n";
-  json += "  \"lastUpdateUmidade\": " + String(moistureData.lastUpdate) + ",\n";
+  json += "  \"unidadeUmidadeSolo\": \"%\",\n";
+  json += "  \"lastUpdateUmidadeSolo\": " + String(moistureData.lastUpdate) + ",\n";
+  json += "  \"dhtSensorId\": 3,\n";
+  json += "  \"temperatura\": " + String(dhtData.temperatura, 1) + ",\n";
+  json += "  \"umidadeAr\": " + String(dhtData.umidadeAr, 1) + ",\n";
+  json += "  \"unidadeTemperatura\": \"°C\",\n";
+  json += "  \"unidadeUmidadeAr\": \"%\",\n";
+  json += "  \"lastUpdateDHT\": " + String(dhtData.lastUpdate) + ",\n";
   json += "  \"uptime\": " + String(millis() / 1000) + "\n";
   json += "}";
   
@@ -396,7 +456,10 @@ void handleDebug() {
   html += "    &nbsp;&nbsp;Potássio: " + String(npkData.potassio) + " mg/kg<br>\n";
   html += "    &nbsp;&nbsp;Last Update NPK: " + String(npkData.lastUpdate) + " ms<br>\n";
   html += "    &nbsp;&nbsp;Umidade do Solo: " + String(moistureData.percentualUmidade) + " %<br>\n";
-  html += "    &nbsp;&nbsp;Last Update Umidade: " + String(moistureData.lastUpdate) + " ms\n";
+  html += "    &nbsp;&nbsp;Last Update Umidade: " + String(moistureData.lastUpdate) + " ms<br>\n";
+  html += "    &nbsp;&nbsp;Temperatura do Ar: " + String(dhtData.temperatura, 1) + " °C<br>\n";
+  html += "    &nbsp;&nbsp;Umidade do Ar: " + String(dhtData.umidadeAr, 1) + " %<br>\n";
+  html += "    &nbsp;&nbsp;Last Update DHT: " + String(dhtData.lastUpdate) + " ms\n";
   html += "  </div>\n";
   html += "  <h2>📋 Últimas 10 linhas recebidas:</h2>\n";
   
