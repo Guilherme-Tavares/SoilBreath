@@ -59,10 +59,11 @@ namespace api_soil_breath.Services
             return existingSolo;
         }
 
-        public Solo Create(Solo solo) { 
-            _context.Solos.Add(solo); 
-            _context.SaveChanges(); 
-            return solo; 
+        public Solo Create(Solo solo)
+        {
+            _context.Solos.Add(solo);
+            _context.SaveChanges();
+            return solo;
         }
 
         public async Task Delete(int id, int idUser)
@@ -86,7 +87,8 @@ namespace api_soil_breath.Services
             existingSensor.Solo.Fosforo = solo.Fosforo;
             existingSensor.Solo.Potassio = solo.Potassio;
             existingSensor.Solo.Nitrogenio = solo.Nitrogenio;
-            existingSensor.Solo.Umidade = solo.UmidadeSolo;            
+            existingSensor.Solo.Umidade = solo.UmidadeSolo;
+            existingSensor.Solo.Temperatura = solo.Temperatura;
 
             await _context.SaveChangesAsync();
             return solo;

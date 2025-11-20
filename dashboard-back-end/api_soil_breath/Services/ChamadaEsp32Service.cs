@@ -59,8 +59,8 @@ namespace api_soil_breath.Services
                 var client = _httpClientFactory.CreateClient();
 
                 // Exemplo de requisição (descomente se quiser chamar o ESP32)
-                var response = await client.GetAsync("http://192.168.4.1/json");
-                //var response = await client.GetAsync("http://localhost:8081/json");
+                //var response = await client.GetAsync("http://192.168.4.1/json");
+                var response = await client.GetAsync("http://localhost:80/json");
                 response.EnsureSuccessStatusCode();
                 var contentString = await response.Content.ReadAsStringAsync();
                 var content = JsonSerializer.Deserialize<SoloResponseEspDTO>(contentString);

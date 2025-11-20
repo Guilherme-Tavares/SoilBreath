@@ -60,6 +60,9 @@ namespace api_soil_breath.DTOs
         [JsonPropertyName("umidadeSolo")]
         public float UmidadeSolo { get; set; }
 
+        [JsonPropertyName("temperatura")]
+        public float Temperatura { get; set; }
+
         [JsonPropertyName("unidadeUmidade")]
         public string UnidadeUmidade { get; set; }
 
