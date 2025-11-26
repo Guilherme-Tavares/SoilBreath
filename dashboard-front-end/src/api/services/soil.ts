@@ -37,9 +37,9 @@ export interface SoloCreateDTO {
 
 // Serviço de Solo
 export const soloService = {
-  // Buscar todos os solos de uma propriedade
-  async getSolos(idPropriedade: number): Promise<ApiResponse<Solo[]>> {
-    return apiClient.get<Solo[]>(`${API_ENDPOINTS.SOLOS}?idPropriedade=${idPropriedade}`);
+  // Buscar todos os solos do usuário autenticado (usa JWT)
+  async getSolos(): Promise<ApiResponse<Solo[]>> {
+    return apiClient.get<Solo[]>(API_ENDPOINTS.SOLOS);
   },
 
   // Buscar um solo específico
@@ -54,6 +54,6 @@ export const soloService = {
 
   // Atualizar solo
   async updateSolo(id: number, data: Partial<SoloCreateDTO>): Promise<ApiResponse<Solo>> {
-    return apiClient.post<Solo>(API_ENDPOINTS.SOLO_BY_ID(id), data);
+    return apiClient.patch<Solo>(API_ENDPOINTS.SOLO_BY_ID(id), data);
   },
 };

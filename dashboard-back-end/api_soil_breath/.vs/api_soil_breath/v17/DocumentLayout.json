@@ -1,93 +1,93 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\",
+  "WorkspaceRootPath": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\services\\chamadaesp32service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\services\\chamadaesp32service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:services\\chamadaesp32service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\services\\soloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\services\\soloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:services\\soloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\dtos\\solodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\dtos\\solodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:dtos\\solodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\dtos\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\dtos\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:dtos\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\dtos\\sensordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\dtos\\sensordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:dtos\\sensordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\entity\\solo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\entity\\solo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:entity\\solo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\controllers\\sensorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\controllers\\sensorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:controllers\\sensorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\controllers\\solocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\controllers\\solocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:controllers\\solocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\services\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\services\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:services\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\dtos\\dashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\dtos\\dashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:dtos\\dashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\entity\\cultura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\entity\\cultura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:entity\\cultura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\entity\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\entity\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:entity\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\entity\\propriedade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\entity\\propriedade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:entity\\propriedade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\entity\\sensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\entity\\sensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:entity\\sensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\data\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\data\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:data\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\services\\sensorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\services\\sensorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:services\\sensorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\user\\desktop\\documentos area de trabalho\\faculdade jhoyan\\4\u00BA per\u00EDodo\\iot\\soilbreath\\dashboard-back-end\\api_soil_breath\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|c:\\users\\guilh\\documents\\ambiente\\dashboard-back-end\\api_soil_breath\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A66D8E1D-8639-4583-B3E5-9B85123D3CC5}|api_soil_breath.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -98,15 +98,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Controllers\\UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "Controllers\\UsuarioController.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAcwEIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -116,9 +120,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "SoloController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Controllers\\SoloController.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Controllers\\SoloController.cs",
               "RelativeDocumentMoniker": "Controllers\\SoloController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Controllers\\SoloController.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Controllers\\SoloController.cs",
               "RelativeToolTip": "Controllers\\SoloController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAA0wA8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -128,9 +132,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "SensorDTO.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\DTOs\\SensorDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\DTOs\\SensorDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\SensorDTO.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\DTOs\\SensorDTO.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\DTOs\\SensorDTO.cs",
               "RelativeToolTip": "DTOs\\SensorDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -140,22 +144,21 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "SoloService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\SoloService.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Services\\SoloService.cs",
               "RelativeDocumentMoniker": "Services\\SoloService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\SoloService.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Services\\SoloService.cs",
               "RelativeToolTip": "Services\\SoloService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T15:25:56.412Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-25T15:25:56.412Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ChamadaEsp32Service.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\ChamadaEsp32Service.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Services\\ChamadaEsp32Service.cs",
               "RelativeDocumentMoniker": "Services\\ChamadaEsp32Service.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\ChamadaEsp32Service.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Services\\ChamadaEsp32Service.cs",
               "RelativeToolTip": "Services\\ChamadaEsp32Service.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAgwD4AAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -166,9 +169,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "SensorController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Controllers\\SensorController.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Controllers\\SensorController.cs",
               "RelativeDocumentMoniker": "Controllers\\SensorController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Controllers\\SensorController.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Controllers\\SensorController.cs",
               "RelativeToolTip": "Controllers\\SensorController.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAQwCEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -178,9 +181,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "DashboardController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Controllers\\DashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Controllers\\DashboardController.cs",
               "RelativeToolTip": "Controllers\\DashboardController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAswCcAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -190,9 +193,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "DashboardDTO.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\DTOs\\DashboardDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\DTOs\\DashboardDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\DashboardDTO.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\DTOs\\DashboardDTO.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\DTOs\\DashboardDTO.cs",
               "RelativeToolTip": "DTOs\\DashboardDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -202,9 +205,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "DashboardService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\DashboardService.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Services\\DashboardService.cs",
               "RelativeDocumentMoniker": "Services\\DashboardService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\DashboardService.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Services\\DashboardService.cs",
               "RelativeToolTip": "Services\\DashboardService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -214,9 +217,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Program.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAgwBIAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -226,9 +229,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Solo.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Solo.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Entity\\Solo.cs",
               "RelativeDocumentMoniker": "Entity\\Solo.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Solo.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Entity\\Solo.cs",
               "RelativeToolTip": "Entity\\Solo.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAcwBoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -238,35 +241,33 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "SoloDTO.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\DTOs\\SoloDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\DTOs\\SoloDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\SoloDTO.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\DTOs\\SoloDTO.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\DTOs\\SoloDTO.cs",
               "RelativeToolTip": "DTOs\\SoloDTO.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAqwD8AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T23:37:54.936Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-29T23:37:54.936Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "UsuarioDTO.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\DTOs\\UsuarioDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\DTOs\\UsuarioDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\UsuarioDTO.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\DTOs\\UsuarioDTO.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\DTOs\\UsuarioDTO.cs",
               "RelativeToolTip": "DTOs\\UsuarioDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T23:38:22.05Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-29T23:38:22.05Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "Cultura.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Cultura.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Entity\\Cultura.cs",
               "RelativeDocumentMoniker": "Entity\\Cultura.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Cultura.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Entity\\Cultura.cs",
               "RelativeToolTip": "Entity\\Cultura.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -276,9 +277,9 @@
               "$type": "Document",
               "DocumentIndex": 19,
               "Title": "JwtHelper.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Helpers\\JwtHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Helpers\\JwtHelper.cs",
               "RelativeDocumentMoniker": "Helpers\\JwtHelper.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Helpers\\JwtHelper.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Helpers\\JwtHelper.cs",
               "RelativeToolTip": "Helpers\\JwtHelper.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -288,9 +289,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "UsuarioService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Services\\UsuarioService.cs",
               "RelativeDocumentMoniker": "Services\\UsuarioService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Services\\UsuarioService.cs",
               "RelativeToolTip": "Services\\UsuarioService.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAowCAAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -300,9 +301,9 @@
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "DataBaseConfig.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Data\\DataBaseConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Data\\DataBaseConfig.cs",
               "RelativeDocumentMoniker": "Data\\DataBaseConfig.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Data\\DataBaseConfig.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Data\\DataBaseConfig.cs",
               "RelativeToolTip": "Data\\DataBaseConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -312,9 +313,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Entity\\Usuario.cs",
               "RelativeDocumentMoniker": "Entity\\Usuario.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Entity\\Usuario.cs",
               "RelativeToolTip": "Entity\\Usuario.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -324,9 +325,9 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "Propriedade.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Propriedade.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Entity\\Propriedade.cs",
               "RelativeDocumentMoniker": "Entity\\Propriedade.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Propriedade.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Entity\\Propriedade.cs",
               "RelativeToolTip": "Entity\\Propriedade.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -336,9 +337,9 @@
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "Sensor.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Sensor.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Entity\\Sensor.cs",
               "RelativeDocumentMoniker": "Entity\\Sensor.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Entity\\Sensor.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Entity\\Sensor.cs",
               "RelativeToolTip": "Entity\\Sensor.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -348,9 +349,9 @@
               "$type": "Document",
               "DocumentIndex": 21,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\appsettings.json",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -360,9 +361,9 @@
               "$type": "Document",
               "DocumentIndex": 20,
               "Title": "SensorService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\SensorService.cs",
+              "DocumentMoniker": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Services\\SensorService.cs",
               "RelativeDocumentMoniker": "Services\\SensorService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos area de trabalho\\Faculdade Jhoyan\\4\u00BA Per\u00EDodo\\IoT\\SoilBreath\\dashboard-back-end\\api_soil_breath\\Services\\SensorService.cs",
+              "ToolTip": "C:\\Users\\Guilh\\Documents\\Ambiente\\dashboard-back-end\\api_soil_breath\\Services\\SensorService.cs",
               "RelativeToolTip": "Services\\SensorService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwBAAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

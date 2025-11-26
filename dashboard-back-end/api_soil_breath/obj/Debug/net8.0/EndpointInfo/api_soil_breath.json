@@ -5,6 +5,64 @@
     "version": "v1"
   },
   "paths": {
+    "/api/Cultura": {
+      "get": {
+        "tags": [
+          "Cultura"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Cultura/{id}": {
+      "get": {
+        "tags": [
+          "Cultura"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Cultura/aptidao/solo/{soloId}": {
+      "get": {
+        "tags": [
+          "Cultura"
+        ],
+        "parameters": [
+          {
+            "name": "soloId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Dashboard": {
       "get": {
         "tags": [

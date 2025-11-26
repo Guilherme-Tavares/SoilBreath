@@ -14,6 +14,10 @@ export const API_ENDPOINTS = {
   SENSORES: '/Sensor',
   SENSOR_BY_ID: (id: number) => `/Sensor/${id}`,
   
+  // Cultura
+  CULTURAS: '/Cultura',
+  CULTURA_BY_ID: (id: number) => `/Cultura/${id}`,
+  
   // Usuário
   USUARIO: '/Usuario',
   USUARIO_LOGIN: '/Usuario/Login',

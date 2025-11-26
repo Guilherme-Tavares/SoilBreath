@@ -43,11 +43,11 @@ export const NutrientCard = ({ nutrient }: NutrientCardProps) => {
           <View style={styles.valueContainer}>
             <View>
               <Text style={styles.value}>
-                {nutrient.current}
+                {Math.round(nutrient.current)}
                 <Text style={styles.unit}> {nutrient.unit}</Text>
               </Text>
               <Text style={styles.range}>
-                Faixa adequada: {nutrient.min}–{nutrient.max}
+                Faixa adequada: {Math.round(nutrient.min)}–{Math.round(nutrient.max)}
               </Text>
             </View>
             

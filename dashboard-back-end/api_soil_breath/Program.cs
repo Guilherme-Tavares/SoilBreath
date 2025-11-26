@@ -103,6 +103,7 @@ builder.Services.AddScoped<SoloService>();
 builder.Services.AddScoped<UsuarioService>();
 builder.Services.AddScoped<SensorService>();
 builder.Services.AddScoped<DashboardService>();
+builder.Services.AddScoped<CulturaService>();
 
 // Add controllers e Swagger
 builder.Services.AddControllers();

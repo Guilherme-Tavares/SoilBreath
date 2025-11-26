@@ -5,7 +5,9 @@ import { RadialProgress } from '../components/RadialProgress';
 import { NutrientCard } from '../components/NutrientCard';
 import ConfirmModal from '../components/ConfirmModal';
 import SuccessModal from '../components/SuccessModal';
+import CultureSelectorModal from '../components/CultureSelectorModal';
 import { soloService, Solo } from '../api/services/soil';
+import { culturaService, Cultura } from '../api/services/cultura';
 import { useAuth } from '../contexts/AuthContext';
 
 export default function Dashboard() {
@@ -14,14 +16,90 @@ export default function Dashboard() {
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [soloData, setSoloData] = useState<Solo | null>(null);
+  const [selectedCulture, setSelectedCulture] = useState<Cultura | null>(null);
+  const [availableCultures, setAvailableCultures] = useState<Cultura[]>([]);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showCultureModal, setShowCultureModal] = useState(false);
   const { logout } = useAuth();
 
   // Buscar dados da API quando o componente carregar
   useEffect(() => {
-    fetchSoloData();
+    fetchInitialData();
   }, []);
+
+  const fetchInitialData = async () => {
+    try {
+      // Primeiro buscar culturas
+      const culturasResponse = await culturaService.getCulturas();
+      let culturas: Cultura[] = [];
+      
+      if (culturasResponse.success && culturasResponse.data) {
+        culturas = culturasResponse.data;
+        setAvailableCultures(culturas);
+      }
+
+      // Depois buscar solo
+      const soloResponse = await soloService.getSolos();
+      if (soloResponse.success && soloResponse.data.length > 0) {
+        setSoloData(soloResponse.data[0]);
+        
+        // Selecionar automaticamente a cultura mais apta
+        if (culturas.length > 0) {
+          const aptidoesResponse = await culturaService.getAptidoesPorSolo(soloResponse.data[0].id);
+          if (aptidoesResponse.success && aptidoesResponse.data.aptidoes.length > 0) {
+            const mostAptCulturaId = aptidoesResponse.data.aptidoes[0].culturaId;
+            const culture = culturas.find(c => c.id === mostAptCulturaId);
+            if (culture) {
+              setSelectedCulture(culture);
+            }
+          }
+        }
+      } else {
+        setError('Nenhum dado de solo encontrado');
+      }
+    } catch (err: any) {
+      console.error('Erro ao carregar dados iniciais:', err);
+      setError('Erro ao buscar dados');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchCultures = async () => {
+    try {
+      const response = await culturaService.getCulturas();
+      if (response.success && response.data) {
+        setAvailableCultures(response.data);
+      }
+    } catch (err) {
+      console.error('Erro ao buscar culturas:', err);
+    }
+  };
+
+  const selectMostAptCulture = async (soloId: number, culturas: Cultura[]) => {
+    try {
+      const response = await culturaService.getAptidoesPorSolo(soloId);
+      if (response.success && response.data.aptidoes.length > 0) {
+        // Aptidões já vêm ordenadas por mediaPct (mais apta primeiro)
+        const mostAptCulturaId = response.data.aptidoes[0].culturaId;
+        const culture = culturas.find(c => c.id === mostAptCulturaId);
+        if (culture) {
+          setSelectedCulture(culture);
+        }
+      }
+    } catch (err) {
+      console.error('Erro ao buscar cultura mais apta:', err);
+    }
+  };
+
+  const handleCultureChange = async (culturaId: number) => {
+    const culture = availableCultures.find(c => c.id === culturaId);
+    if (culture) {
+      setSelectedCulture(culture);
+      setShowCultureModal(false);
+    }
+  };
 
   const handleLogoutPress = () => {
     setShowLogoutModal(true);
@@ -56,13 +134,18 @@ export default function Dashboard() {
       setLoading(true);
       setError(null);
 
-      console.log('🌐 Chamando API:', 'http://localhost:7137/api/Solo?idPropriedade=1');
-      const response = await soloService.getSolos(1);
+      console.log('🌐 Chamando API:', 'https://localhost:7137/api/Solo');
+      const response = await soloService.getSolos();
       console.log('Resposta da API:', response);
 
       if (response.success && response.data.length > 0) {
         console.log('Dados encontrados:', response.data[0]);
         setSoloData(response.data[0]);
+        
+        // Selecionar automaticamente a cultura mais apta
+        if (availableCultures.length > 0) {
+          await selectMostAptCulture(response.data[0].id, availableCultures);
+        }
       } else {
         console.log('Nenhum dado encontrado');
         setError('Nenhum dado de solo encontrado');
@@ -89,26 +172,25 @@ export default function Dashboard() {
 
   // Calcular aptidão do solo (exemplo simplificado)
   const calcularAptidao = () => {
-    if (!soloData) return 0;
+    if (!soloData || !selectedCulture) return 0;
 
-    // Fórmula simples: média dos nutrientes em relação aos valores ideais
-    // Você pode melhorar isso depois
-    const nPercent = Math.min((soloData.nitrogenio / 60) * 100, 100);
-    const pPercent = Math.min((soloData.fosforo / 45) * 100, 100);
-    const kPercent = Math.min((soloData.potassio / 250) * 100, 100);
+    // Calcula baseado nos valores ideais da cultura selecionada
+    const nPercent = Math.min((soloData.nitrogenio / selectedCulture.nitrogenio) * 100, 100);
+    const pPercent = Math.min((soloData.fosforo / selectedCulture.fosforo) * 100, 100);
+    const kPercent = Math.min((soloData.potassio / selectedCulture.potassio) * 100, 100);
 
     return Math.round((nPercent + pPercent + kPercent) / 3);
   };
 
   // Preparar dados dos nutrientes para o NutrientCard
-  const nutrients = soloData ? [
+  const nutrients = soloData && selectedCulture ? [
     {
       symbol: "N",
       name: "Nitrogênio",
       description: "Essencial para crescimento vegetativo",
       current: soloData.nitrogenio,
-      min: 40,
-      max: 60,
+      min: selectedCulture.nitrogenio * 0.7,
+      max: selectedCulture.nitrogenio,
       unit: "mg/kg"
     },
     {
@@ -116,8 +198,8 @@ export default function Dashboard() {
       name: "Fósforo",
       description: "Importante para raízes e floração",
       current: soloData.fosforo,
-      min: 25,
-      max: 45,
+      min: selectedCulture.fosforo * 0.7,
+      max: selectedCulture.fosforo,
       unit: "mg/kg"
     },
     {
@@ -125,8 +207,8 @@ export default function Dashboard() {
       name: "Potássio",
       description: "Fortalece resistência da planta",
       current: soloData.potassio,
-      min: 150,
-      max: 250,
+      min: selectedCulture.potassio * 0.7,
+      max: selectedCulture.potassio,
       unit: "mg/kg"
     }
   ] : [];
@@ -134,9 +216,25 @@ export default function Dashboard() {
   // Tela de loading
   if (loading) {
     return (
-      <View style={styles.centerContainer}>
-        <ActivityIndicator size="large" color="#3b82f6" />
-        <Text style={styles.loadingText}>Carregando dados...</Text>
+      <View style={styles.container}>
+        {/* Header com logout */}
+        <View style={styles.header}>
+          <View style={styles.headerLeft}>
+            <Text style={styles.headerTitle}>Análise de Solo</Text>
+          </View>
+          <TouchableOpacity 
+            onPress={handleLogoutPress} 
+            style={styles.logoutButton}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="log-out-outline" size={24} color="white" />
+          </TouchableOpacity>
+        </View>
+        
+        <View style={styles.centerContainer}>
+          <ActivityIndicator size="large" color="#3b82f6" />
+          <Text style={styles.loadingText}>Carregando dados...</Text>
+        </View>
       </View>
     );
   }
@@ -144,13 +242,58 @@ export default function Dashboard() {
   // Tela de erro
   if (error) {
     return (
-      <View style={styles.centerContainer}>
-        <Ionicons name="alert-circle" size={64} color="#ef4444" />
-        <Text style={styles.errorText}>{error}</Text>
-        <Text style={styles.errorHint}>
-          Verifique se a API está rodando em{'\n'}
-          http://localhost:5135
-        </Text>
+      <View style={styles.container}>
+        {/* Header com logout */}
+        <View style={styles.header}>
+          <View style={styles.headerLeft}>
+            <Text style={styles.headerTitle}>Análise de Solo</Text>
+          </View>
+          <TouchableOpacity 
+            onPress={handleLogoutPress} 
+            style={styles.logoutButton}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="log-out-outline" size={24} color="white" />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.centerContainer}>
+          <Ionicons name="alert-circle" size={64} color="#ef4444" />
+          <Text style={styles.errorText}>{error}</Text>
+          <Text style={styles.errorHint}>
+            Verifique se a API está rodando em{'\n'}
+            https://localhost:7137
+          </Text>
+          <TouchableOpacity 
+            onPress={handleRefresh} 
+            style={styles.retryButton}
+            activeOpacity={0.7}
+          >
+            <Text style={styles.retryButtonText}>Tentar novamente</Text>
+          </TouchableOpacity>
+        </View>
+        
+        {/* Modals */}
+        <ConfirmModal
+          visible={showLogoutModal}
+          title="Confirmar Saída"
+          message="Deseja realmente sair da sua conta?"
+          icon="log-out-outline"
+          iconColor="#ef4444"
+          confirmText="Sair"
+          cancelText="Cancelar"
+          confirmStyle="destructive"
+          onConfirm={handleLogoutConfirm}
+          onCancel={handleLogoutCancel}
+        />
+        <SuccessModal
+          visible={showSuccessModal}
+          title="Até logo! 👋"
+          message="Você foi desconectado com sucesso."
+          icon="checkmark-circle"
+          buttonText="OK"
+          onClose={handleSuccessModalClose}
+        />
       </View>
     );
   }
@@ -178,10 +321,27 @@ export default function Dashboard() {
       {/* Radial Progress Card */}
       <View style={styles.progressCard}>
         <View style={styles.progressHeader}>
+          {/* Culture Selector */}
+          <TouchableOpacity
+            style={styles.cultureSelector}
+            onPress={() => setShowCultureModal(true)}
+            activeOpacity={0.7}
+          >
+            <View style={styles.cultureSelectorContent}>
+              <Text style={styles.cultureSelectorLabel}>Cultura:</Text>
+              <Text style={styles.cultureSelectorValue}>
+                {selectedCulture?.nome || 'Selecione'}
+              </Text>
+            </View>
+            <Ionicons name="chevron-down" size={20} color="#3b82f6" />
+          </TouchableOpacity>
+
           <View style={styles.progressContent}>
             <RadialProgress value={calcularAptidao()} size={180} strokeWidth={12} />
             <Text style={styles.progressTitle}>Aptidão do Solo</Text>
-            <Text style={styles.progressSubtitle}>Baseado nos nutrientes NPK</Text>
+            <Text style={styles.progressSubtitle}>
+              {selectedCulture ? `Para cultivo de ${selectedCulture.nome}` : 'Selecione uma cultura'}
+            </Text>
           </View>
           
           {/* Botão de Atualizar */}
@@ -212,7 +372,7 @@ export default function Dashboard() {
               <Text style={styles.environmentalLabel}>Umidade</Text>
               <Text style={styles.environmentalValue}>
                 {soloData?.umidade != null 
-                  ? `${soloData.umidade.toFixed(1)}%` 
+                  ? `${Math.round(soloData.umidade)}%` 
                   : '--'}
               </Text>
             </View>
@@ -226,7 +386,7 @@ export default function Dashboard() {
               <Text style={styles.environmentalLabel}>Temperatura</Text>
               <Text style={styles.environmentalValue}>
                 {soloData?.temperatura != null 
-                  ? `${soloData.temperatura.toFixed(1)}°C` 
+                  ? `${Math.round(soloData.temperatura)}°C` 
                   : '--'}
               </Text>
             </View>
@@ -265,9 +425,35 @@ export default function Dashboard() {
         buttonText="OK"
         onClose={handleSuccessModalClose}
       />
+
+      {/* Modal de Seleção de Cultura */}
+      <CultureSelectorModal
+        visible={showCultureModal}
+        cultures={availableCultures.map(c => ({
+          id: c.id,
+          nome: c.nome,
+          icon: getCultureIcon(c.nome),
+        }))}
+        selectedCultureId={selectedCulture?.id || null}
+        onSelect={handleCultureChange}
+        onClose={() => setShowCultureModal(false)}
+      />
     </ScrollView>
   );
 }
+
+// Helper para ícones de cultura
+const getCultureIcon = (nome: string): string => {
+  const icons: { [key: string]: string } = {
+    'Trigo': '🌾',
+    'Milho': '🌽',
+    'Soja': '🫘',
+    'Arroz': '🌾',
+    'Feijão': '🫘',
+    'Algodão': '☁️',
+  };
+  return icons[nome] || '🌱';
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -301,6 +487,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#6b7280',
     textAlign: 'center',
+  },
+  retryButton: {
+    marginTop: 20,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    backgroundColor: '#3b82f6',
+    borderRadius: 12,
+  },
+  retryButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
   },
   header: {
     backgroundColor: '#3b82f6',
@@ -423,5 +621,29 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 16,
     color: '#1f2937',
+  },
+  cultureSelector: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#eff6ff',
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: '#bfdbfe',
+  },
+  cultureSelectorContent: {
+    flex: 1,
+  },
+  cultureSelectorLabel: {
+    fontSize: 12,
+    color: '#6b7280',
+    marginBottom: 4,
+  },
+  cultureSelectorValue: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#3b82f6',
   },
 });

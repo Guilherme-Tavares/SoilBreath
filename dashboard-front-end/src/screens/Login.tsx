@@ -131,7 +131,7 @@ export default function Login({ onLoginSuccess }: LoginScreenProps) {
             <Ionicons name="leaf" size={48} color="white" />
           </View>
         </View>
-        <Text style={styles.title}>Farm Pulse</Text>
+        <Text style={styles.title}>Soil Brief</Text>
         <Text style={styles.subtitle}>Análise Inteligente de Solo</Text>
       </View>
 
@@ -225,7 +225,7 @@ export default function Login({ onLoginSuccess }: LoginScreenProps) {
 
       {/* Footer */}
       <View style={styles.footer}>
-        <Text style={styles.footerText}>Farm Pulse © 2025</Text>
+        <Text style={styles.footerText}>Soil Brief © 2025</Text>
       </View>
     </KeyboardAvoidingView>
   );

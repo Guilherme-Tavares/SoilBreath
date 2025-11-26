@@ -152,6 +152,56 @@ class ApiClient {
     }
   }
 
+  // PATCH request
+  async patch<T>(endpoint: string, body: any): Promise<ApiResponse<T>> {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), this.timeout);
+
+      const response = await fetch(`${this.baseUrl}${endpoint}`, {
+        method: 'PATCH',
+        headers: this.getHeaders(),
+        body: JSON.stringify(body),
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        // Verificar se é erro de autenticação (token expirado/inválido)
+        if (response.status === 401) {
+          if (this.onTokenExpired) {
+            this.onTokenExpired();
+          }
+          throw new Error('Sessão expirada. Por favor, faça login novamente.');
+        }
+
+        // Tentar ler mensagem de erro da API
+        let errorMessage = `HTTP Error: ${response.status}`;
+        try {
+          const errorData = await response.json();
+          if (errorData.message) {
+            errorMessage = errorData.message;
+          } else if (errorData.error) {
+            errorMessage = errorData.error;
+          }
+        } catch {
+          // Se não conseguir parsear JSON, manter mensagem padrão
+        }
+        throw new Error(errorMessage);
+      }
+
+      const data = await response.json();
+      return {
+        success: true,
+        data,
+      };
+    } catch (error) {
+      console.error('API PATCH Error:', error);
+      throw this.handleError(error);
+    }
+  }
+
   // Tratamento de erros
   private handleError(error: any): ApiError {
     if (error.name === 'AbortError') {

@@ -1,5 +1,47 @@
 [
   {
+    "ContainingType": "api_soil_breath.Controllers.CulturaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Cultura",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api_soil_breath.Controllers.CulturaController",
+    "Method": "GetById",
+    "RelativePath": "api/Cultura/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api_soil_breath.Controllers.CulturaController",
+    "Method": "GetAptidoesPorSolo",
+    "RelativePath": "api/Cultura/aptidao/solo/{soloId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "soloId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DashboardController",
     "Method": "GetDashboard",
     "RelativePath": "api/Dashboard",

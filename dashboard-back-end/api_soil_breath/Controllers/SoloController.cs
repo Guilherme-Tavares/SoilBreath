@@ -25,11 +25,14 @@ namespace api_soil_breath.Controllers
             try
             {
                 var id = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+                Console.WriteLine($"[DEBUG] GetAll Solos - UserId do token: {id}");
                 var solos = await _soloService.GetAll(id);
+                Console.WriteLine($"[DEBUG] GetAll Solos - Encontrados: {solos.Count} solos");
                 return Ok(solos);
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"[DEBUG] GetAll Solos - ERRO: {ex.Message}");
                 return StatusCode(500, $"Erro ao buscar solos: {ex.Message}");
             }
         }

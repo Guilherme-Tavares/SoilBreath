@@ -41,6 +41,7 @@ export default function BottomTabNavigator() {
         },
         headerShown: false,
       })}
+      initialRouteName="Dashboard"
     >
       <Tab.Screen name="Aptidão" component={PlantingAptitudeScreen} />
       <Tab.Screen name="Dashboard" component={DashboardScreen} />
