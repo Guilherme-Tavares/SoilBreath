@@ -1,0 +1,19 @@
+{
+  "name": "esp8266-simulator",
+  "version": "1.0.0",
+  "description": "Simulador do servidor Web ESP8266 para o projeto Soil Brief",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["esp8266", "simulator", "npk", "sensor"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

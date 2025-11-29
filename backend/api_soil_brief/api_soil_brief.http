@@ -1,0 +1,6 @@
+@api_soil_brief_HostAddress = http://localhost:5135
+
+GET {{api_soil_brief_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
