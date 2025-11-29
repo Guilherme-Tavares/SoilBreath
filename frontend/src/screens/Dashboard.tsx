@@ -447,8 +447,8 @@ const getCultureIcon = (nome: string): string => {
   const icons: { [key: string]: string } = {
     'Trigo': '🌾',
     'Milho': '🌽',
-    'Soja': '🫘',
-    'Arroz': '🌾',
+    'Soja': '🌿',
+    'Arroz': '🍚',
     'Feijão': '🫘',
     'Algodão': '☁️',
   };
